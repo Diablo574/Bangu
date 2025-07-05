@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jornal - C.E. BANGU</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/jornal.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="icon" href="img/logo-bangu.png">
+</head>
+<body>
+    <!-- Menu Lateral -->
+    <nav id="sidebar">
+        <div class="sidebar-header">
+            <img src="img/logo-bangu.png" alt="Logo C.E. BANGU" class="logo">
+            <h3>C.E. BANGU</h3>
+            <button id="sidebarCollapse" class="btn btn-toggle">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+
+        <ul class="list-unstyled components">
+            <li>
+                <a href="index.html"><i class="fas fa-home"></i> <span>Home</span></a>
+            </li>
+            <li>
+                <a href="professores.html"><i class="fas fa-chalkboard-teacher"></i> <span>Professores</span></a>
+            </li>
+            <li>
+                <a href="alunos.html"><i class="fas fa-users"></i> <span>Alunos</span></a>
+            </li>
+            <li class="active">
+                <a href="jornal.html"><i class="fas fa-newspaper"></i> <span>Jornal</span></a>
+            </li>
+            <li>
+                <a href="historia.html"><i class="fas fa-landmark"></i> <span>História</span></a>
+            </li>
+            <li>
+                <a href="quiz.html"><i class="fas fa-question-circle"></i> <span>Quiz</span></a>
+            </li>
+            <li>
+                <a href="entrevistas.html"><i class="fas fa-microphone-alt"></i> <span>Entrevistas</span></a>
+            </li>
+            <li>
+                <a href="curiosidades.html"><i class="fas fa-bell"></i> <span>Curiosidades</span></a>
+            </li>
+        </ul>
+
+        <div class="sidebar-footer">
+            <div class="theme-switcher">
+                <button id="themeToggle" class="btn btn-sm btn-toggle">
+                    <i class="fas fa-moon"></i> Tema Escuro
+                </button>
+            </div>
+            
+            <div class="aluno-info">
+                <img src="img/aluno-destaque.jpg" alt="Aluno Nacht" class="aluno-foto">
+                <div class="aluno-detalhes">
+                    <strong>Nacht</strong>
+                    <small>Turma: 3003</small>
+                    <small>Número: 5</small>
+                    <small>Desenvolvedor</small>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Conteúdo Principal -->
+    <div id="content">
+        <!-- Top Bar Mobile -->
+        <nav class="navbar navbar-expand d-flex d-md-none">
+            <div class="container-fluid">
+                <button id="sidebarCollapseMobile" class="btn btn-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="navbar-brand mx-auto">
+                    <img src="img/logo-bangu.png" height="30" alt="Logo">
+                </div>
+                <button id="themeToggleMobile" class="btn btn-toggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+        </nav>
+
+        <!-- Conteúdo do Jornal -->
+        <div class="container-fluid px-3 px-md-4 py-4">
+            <!-- Cabeçalho do Jornal -->
+            <div class="row mb-4">
+                <div class="col-12 text-center">
+                    <h1 class="jornal-title"><i class="fas fa-newspaper me-3"></i>Jornal Bangu</h1>
+                    <p class="jornal-subtitle">Informação e cultura para nossa comunidade escolar</p>
+                    <div class="jornal-date">Edição nº 1 | Junho 2025</div>
+                </div>
+            </div>
+
+            <!-- Destaque Principal -->
+            <div class="row mb-4">
+                <div class="col-12">
+                    <div class="jornal-destaque">
+                        <div class="destaque-imagem" style="background-image: url('img/jornal-destaque.jpg');"></div>
+                        <div class="destaque-conteudo">
+                            <span class="destaque-categoria">Destaque</span>
+                            <h2 class="destaque-titulo">Projeto da 3003</h2>
+                            <p class="destaque-resumo">Memórias e Vozes do C.E Bangu</p>
+                            <button type="button" class="btn btn-primary noticia-link" 
+                                data-title="Projeto da 3003" 
+                                data-text="A turma 3003 do Colégio Estadual Bangu está realizando um projeto especial que valoriza a história e a identidade da escola. Com o nome Memórias e Vozes do CE Bangu, o projeto tem como objetivo resgatar lembranças, histórias de ex-alunos e professores, e destacar a importância da escola na vida da comunidade." 
+                                data-bs-toggle="modal" 
+                                data-bs-target="#modalNoticia">
+                                Ler Matéria Completa
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Seção de Notícias -->
+            <div class="row">
+                <div class="col-12">
+                    <h3 class="jornal-section-title"><i class="fas fa-bolt me-2"></i>Notícias</h3>
+                </div>
+            </div>
+
+            <div class="row g-4">
+                <!-- Notícia 1 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="jornal-noticia">
+                        <div class="noticia-imagem" style="background-image: url('img/jornal-noticia1.jpg');"></div>
+                        <div class="noticia-corpo">
+                            <span class="noticia-categoria">Eventos</span>
+                            <h4 class="noticia-titulo">Projeto Memórias De Bangu</h4>
+                            <p class="noticia-resumo"></p>
+                            <div class="noticia-rodape">
+                                <small class="noticia-data"><i class="far fa-calendar-alt me-2"></i>25/06/2025</small>
+                                <button class="noticia-link" 
+                                    data-title="Projeto Memórias De Bangu" 
+                                    data-text=" O projeto Memórias de Bangu do Colégio Estadual Bangu tem como objetivo principal resgatar, preservar e valorizar a história e as experiências vividas dentro da escola e da comunidade onde ela está inserida. A proposta busca dar voz aos estudantes, ex-alunos, professores e moradores da região, reunindo relatos, fotografias, objetos antigos e documentos que ajudam a contar a trajetória do colégio e do bairro de Bangu." 
+                                    data-bs-toggle="modal" 
+                                    data-bs-target="#modalNoticia">
+                                    Ler mais <i class="fas fa-arrow-right ms-1"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Notícia 2 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="jornal-noticia">
+                        <div class="noticia-imagem" style="background-image: url('img/jornal-noticia2.jpg');"></div>
+                        <div class="noticia-corpo">
+                            <span class="noticia-categoria">Eventos</span>
+                            <h4 class="noticia-titulo">Consciencia Negra</h4>
+                            <p class="noticia-resumo"></p>
+                            <div class="noticia-rodape">
+                                <small class="noticia-data"><i class="far fa-calendar-alt me-2"></i>25/06/2025</small>
+                                <button class="noticia-link" 
+                                    data-title="Consciencia Negra" 
+                                    data-text="O projeto Consciência Negra é uma iniciativa educativa que tem como foco principal a valorização da cultura, da história e das contribuições dos povos africanos e afro-brasileiros na formação da sociedade brasileira. Ele é geralmente realizado em escolas por volta do Dia da Consciência Negra (20 de novembro), data que marca a morte de Zumbi dos Palmares, líder do Quilombo dos Palmares e símbolo da resistência negra no Brasil." 
+                                    data-bs-toggle="modal" 
+                                    data-bs-target="#modalNoticia">
+                                    Ler mais <i class="fas fa-arrow-right ms-1"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            <!-- Seção de Colunas -->
+            <div class="row mt-5">
+                <div class="col-12">
+                    <h3 class="jornal-section-title"><i class="fas fa-pen-fancy me-2"></i>Críticas</h3>
+                </div>
+            </div>
+
+            <div class="row g-4">
+                <!-- Coluna 1 -->
+                <div class="col-md-6">
+    <div class="jornal-coluna">
+        <div class="coluna-autor">
+            <img src="img/alunos/colunista1.jpg" alt="Colunista" class="coluna-foto">
+            <div class="coluna-autor-info">
+                <h5 class="coluna-autor-nome">Anônimo</h5>
+                <small class="coluna-autor-turma">Turma ****</small>
+            </div>
+        </div>
+        <div class="coluna-conteudo">
+            <h4 class="coluna-titulo">Opinião: Faltam aulas e saímos cedo</h4>
+            <p class="coluna-texto">
+                Algo que precisa ser discutido na nossa escola são as constantes faltas de aula.
+            </p>
+            <button class="coluna-link" 
+                data-title="Opinião: Faltam aulas e saímos cedo" 
+                data-text="Algo que precisa ser discutido na nossa escola são as constantes faltas de aula. Muitas vezes, por falta de professores ou organização, acabamos saindo mais cedo. Isso impacta diretamente nosso aprendizado e nosso desenvolvimento, já que perdemos conteúdos importantes que poderiam fazer diferença no nosso futuro." 
+                data-bs-toggle="modal" 
+                data-bs-target="#modalNoticia">
+                Continuar lendo <i class="fas fa-arrow-right ms-1"></i>
+            </button>
+        </div>
+    </div>
+</div>
+
+<div class="col-md-6">
+    <div class="jornal-coluna">
+        <div class="coluna-autor">
+            <img src="img/alunos/colunista1.jpg" alt="Colunista" class="coluna-foto">
+            <div class="coluna-autor-info">
+                <h5 class="coluna-autor-nome">Anônimo</h5>
+                <small class="coluna-autor-turma">Turma ****</small>
+            </div>
+        </div>
+        <div class="coluna-conteudo">
+            <h4 class="coluna-titulo">Opinião: O bebedouro precisa de manutenção</h4>
+            <p class="coluna-texto">
+                A estrutura da escola precisa de atenção, principalmente quando falamos do bebedouro.
+            </p>
+            <button class="coluna-link" 
+                data-title="Opinião: O bebedouro precisa de manutenção" 
+                data-text="A estrutura da escola precisa de atenção, principalmente quando falamos do bebedouro. Muitas vezes ele não funciona corretamente e, quando funciona, não oferece água gelada. Em dias quentes, isso se torna um problema sério, afetando nosso bem-estar e até nosso rendimento nas aulas." 
+                data-bs-toggle="modal" 
+                data-bs-target="#modalNoticia">
+                Continuar lendo <i class="fas fa-arrow-right ms-1"></i>
+            </button>
+        </div>
+    </div>
+</div>
+
+<div class="col-md-6">
+    <div class="jornal-coluna">
+        <div class="coluna-autor">
+            <img src="img/alunos/colunista1.jpg" alt="Colunista" class="coluna-foto">
+            <div class="coluna-autor-info">
+                <h5 class="coluna-autor-nome">Anônimo</h5>
+                <small class="coluna-autor-turma">Turma ****</small>
+            </div>
+        </div>
+        <div class="coluna-conteudo">
+            <h4 class="coluna-titulo">Opinião: A escola precisa estar mais limpa</h4>
+            <p class="coluna-texto">
+                A limpeza da escola nem sempre está adequada.
+            </p>
+            <button class="coluna-link" 
+                data-title="Opinião: A escola precisa estar mais limpa" 
+                data-text="A limpeza da escola nem sempre está adequada. Salas, banheiros e áreas comuns, por vezes, ficam sujas, o que prejudica não só o ambiente, mas também a nossa saúde. É fundamental que haja mais cuidado com a higiene, afinal, um ambiente limpo contribui muito para a qualidade do ensino." 
+                data-bs-toggle="modal" 
+                data-bs-target="#modalNoticia">
+                Continuar lendo <i class="fas fa-arrow-right ms-1"></i>
+            </button>
+        </div>
+    </div>
+</div>
+
+<div class="col-md-6">
+    <div class="jornal-coluna">
+        <div class="coluna-autor">
+            <img src="img/alunos/colunista1.jpg" alt="Colunista" class="coluna-foto">
+            <div class="coluna-autor-info">
+                <h5 class="coluna-autor-nome">Anônimo</h5>
+                <small class="coluna-autor-turma">Turma ****</small>
+            </div>
+        </div>
+        <div class="coluna-conteudo">
+            <h4 class="coluna-titulo">Opinião: Queremos uma biblioteca mais ativa</h4>
+            <p class="coluna-texto">
+                A biblioteca da escola poderia ser muito mais utilizada.
+            </p>
+            <button class="coluna-link" 
+                data-title="Opinião: Queremos uma biblioteca mais ativa" 
+                data-text="A biblioteca da escola poderia ser muito mais utilizada. Ela nem sempre está aberta e possui pouca variedade de livros. Seria interessante que ela estivesse disponível com mais frequência e contasse com títulos diversos, que atendam aos interesses dos alunos e incentivem mais a leitura e a busca pelo conhecimento." 
+                data-bs-toggle="modal" 
+                data-bs-target="#modalNoticia">
+                Continuar lendo <i class="fas fa-arrow-right ms-1"></i>
+            </button>
+        </div>
+    </div>
+</div>
+
+<div class="col-md-6">
+    <div class="jornal-coluna">
+        <div class="coluna-autor">
+            <img src="img/alunos/colunista1.jpg" alt="Colunista" class="coluna-foto">
+            <div class="coluna-autor-info">
+                <h5 class="coluna-autor-nome">Anônimo</h5>
+                <small class="coluna-autor-turma">Turma ****</small>
+            </div>
+        </div>
+        <div class="coluna-conteudo">
+            <h4 class="coluna-titulo">Opinião: Aquele campo poderia ter mais utilidade</h4>
+            <p class="coluna-texto">
+                Existe um espaço ao lado da quadra que está completamente sem uso.
+            </p>
+            <button class="coluna-link" 
+                data-title="Opinião: Aquele campo poderia ter mais utilidade" 
+                data-text="Existe um espaço ao lado da quadra que está completamente sem uso. A escola poderia pensar em formas de aproveitar esse local, como construir uma área de lazer, um jardim, uma horta escolar ou até mesmo expandir a quadra para mais atividades esportivas. Isso traria benefícios para todos os alunos." 
+                data-bs-toggle="modal" 
+                data-bs-target="#modalNoticia">
+                Continuar lendo <i class="fas fa-arrow-right ms-1"></i>
+            </button>
+        </div>
+    </div>
+</div>
+
+        <!-- Rodapé -->
+        <footer class="bg-primary text-white py-4 mt-4">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <h5>Redes Sociais</h5>
+                        <div class="social-icons">
+                            <a href="https://www.instagram.com/cebangu_3003_?igsh=MW0yamx4NG9sZ2VzMA==" class="text-white me-3"><i class="fab fa-instagram fa-2x"></i></a>
+                            <a href="https://vm.tiktok.com/ZMSuWEkAu/" class="text-white me-3"><i class="fab fa-tiktok fa-2x"></i></a>
+
+                    </div>
+                </div>
+                <hr>
+                <div class="text-center">
+                    <p class="mb-0">Nacht © 2025 - Todos os Direitos Reservados</p>
+                    <p class="mb-0">Turma: 3003 | Número: 5</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Modal de Leitura -->
+    <div class="modal fade" id="modalNoticia" tabindex="-1" aria-labelledby="modalNoticiaLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalNoticiaLabel">Título da Notícia</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                </div>
+                <div class="modal-body">
+                    <p id="modalNoticiaText">Texto completo da notícia...</p>
+                </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/jornal.js"></script>
+</body>
+</html>

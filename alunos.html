@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alunos - C.E. BANGU</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/alunos.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="icon" href="img/logo-bangu.png">
+</head>
+<body>
+    <!-- Menu Lateral -->
+    <nav id="sidebar">
+        <div class="sidebar-header">
+            <img src="img/logo-bangu.png" alt="Logo C.E. BANGU" class="logo">
+            <h3>C.E. BANGU</h3>
+            <button id="sidebarCollapse" class="btn btn-toggle">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+
+        <ul class="list-unstyled components">
+            <li>
+                <a href="index.html"><i class="fas fa-home"></i> <span>Home</span></a>
+            </li>
+            <li>
+                <a href="professores.html"><i class="fas fa-chalkboard-teacher"></i> <span>Professores</span></a>
+            </li>
+            <li class="active">
+                <a href="alunos.html"><i class="fas fa-users"></i> <span>Alunos</span></a>
+            </li>
+            <li>
+                <a href="jornal.html"><i class="fas fa-newspaper"></i> <span>Jornal</span></a>
+            </li>
+            <li>
+                <a href="historia.html"><i class="fas fa-landmark"></i> <span>História</span></a>
+            </li>
+            <li>
+                <a href="quiz.html"><i class="fas fa-question-circle"></i> <span>Quiz</span></a>
+            </li>
+            <li>
+                <a href="entrevistas.html"><i class="fas fa-microphone-alt"></i> <span>Entrevistas</span></a>
+            </li>
+            <li>
+                <a href="curiosidades.html"><i class="fas fa-bell"></i> <span>Curiosidades</span></a>
+            </li>
+        </ul>
+
+        <div class="sidebar-footer">
+            <div class="theme-switcher">
+                <button id="themeToggle" class="btn btn-sm btn-toggle">
+                    <i class="fas fa-moon"></i> Tema Escuro
+                </button>
+            </div>
+            
+            <div class="aluno-info">
+                <img src="img/aluno-destaque.jpg" alt="Aluno Nacht" class="aluno-foto">
+                <div class="aluno-detalhes">
+                    <strong>Nacht</strong>
+                    <small>Turma: 3003</small>
+                    <small>Número: 5</small>
+                    <small>Desenvolvedor</small>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Conteúdo Principal -->
+    <div id="content">
+        <!-- Top Bar Mobile -->
+        <nav class="navbar navbar-expand d-flex d-md-none">
+            <div class="container-fluid">
+                <button id="sidebarCollapseMobile" class="btn btn-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="navbar-brand mx-auto">
+                    <img src="img/logo-bangu.png" height="30" alt="Logo">
+                </div>
+                <button id="themeToggleMobile" class="btn btn-toggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+        </nav>
+
+        <!-- Conteúdo da Página de Alunos -->
+        <div class="container-fluid px-3 px-md-4 py-4">
+            <div class="row mb-4">
+                <div class="col-12">
+                    <h1 class="mb-4"><i class="fas fa-users me-3"></i>Alunos da Turma 3003</h1>
+                    <p class="lead">Conheça os alunos que contribuíram para este projeto</p>
+                </div>
+            </div>
+
+
+            <!-- Cards dos Alunos -->
+            <div class="row g-4 alunos-container">
+                <!-- Desenvolvedor (Nacht) -->
+                <div class="col-md-6 col-lg-4 aluno-card" data-category="Criador">
+                    <div class="card h-100">
+<img src="img/aluno-destaque.jpg" alt="Foto de Nacht" class="aluno-img" />
+                        <div class="card-body">
+                            <h5 class="card-title">Gabriel</h5>
+                            <p class="card-sub">Desenvolvedor</p>
+                            <p class="card-text">Responsável pelo desenvolvimento completo do site, incluindo estrutura HTML, estilização CSS e funcionalidades JavaScript. Criou todo o sistema de navegação e temas claro/escuro.</p>
+                            <div class="aluno-details">
+                                <small><i class="fas fa-star me-2"></i>Turma: 3003</small>
+                                <small><i class="fas fa-id-card me-2"></i>Número: 5</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            <!-- Cards dos Alunos -->
+            <div class="row g-4 alunos-container">
+                <!-- Desenvolvedor (Nacht) -->
+                <div class="col-md-6 col-lg-4 aluno-card" data-category="jornal">
+                    <div class="card h-100">
+<img src="img/gabi.jpg" alt="Foto de Gabi" class="aluno-img" />
+                        <div class="card-body">
+                            <h5 class="card-title">Gabriella</h5>
+                            <p class="card-sub">Jornal</p>
+                            <p class="card-text">Responsável pelo desenvolvimento do jornal e também contribuiu com ideias para o site, incluindo o quiz, a seção de professores e as entrevistas.</p>
+                            <div class="aluno-details">
+                                <small><i class="fas fa-star me-2"></i>Turma: 3003</small>
+                                <small><i class="fas fa-id-card me-2"></i>Número: 7</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>                
+
+<!-- Sthefany da Silva Nascimento -->
+<div class="col-md-6 col-lg-4 aluno-card" data-category="fotografia">
+    <div class="card h-100">
+        <img src="img/alunos/27.jpg" alt="Foto de Sthefany" class="aluno-img" />
+        <div class="card-body">
+            <h5 class="card-title">Sthefany da Silva Nascimento</h5>
+            <p class="card-sub">Fotografias</p>
+            <p class="card-text">Responsável pelas fotografias, impressão de materiais e participação na equipe de jornal.</p>
+            <div class="aluno-details">
+                <small><i class="fas fa-star me-2"></i>Turma: 3003</small>
+                <small><i class="fas fa-id-card me-2"></i>Número: 27</small>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Rafaely da Silva Castro -->
+<div class="col-md-6 col-lg-4 aluno-card" data-category="fotografia">
+    <div class="card h-100">
+        <img src="img/alunos/23.jpg" alt="Foto de Rafaely" class="aluno-img" />
+        <div class="card-body">
+            <h5 class="card-title">Rafaely da Silva Castro</h5>
+            <p class="card-sub">Fotografias</p>
+            <p class="card-text">Atuou na produção de fotografias e ajudou a equipe responsável pelo jornal do projeto.</p>
+            <div class="aluno-details">
+                <small><i class="fas fa-star me-2"></i>Turma: 3003</small>
+                <small><i class="fas fa-id-card me-2"></i>Número: 23</small>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Renata Calixto da Silva -->
+<div class="col-md-6 col-lg-4 aluno-card" data-category="jornal">
+    <div class="card h-100">
+        <img src="img/alunos/24.jpg" alt="Foto de Renata" class="aluno-img" />
+        <div class="card-body">
+            <h5 class="card-title">Renata Calixto da Silva</h5>
+            <p class="card-sub">jornal</p>
+            <p class="card-text">Atuou na produção do jornal e ajudou a equipe responsável pela entrevista e outras coisas.</p>
+            <div class="aluno-details">
+                <small><i class="fas fa-star me-2"></i>Turma: 3003</small>
+                <small><i class="fas fa-id-card me-2"></i>Número: 24</small>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Maria Eduarda Calixto da Silva -->
+<div class="col-md-6 col-lg-4 aluno-card" data-category="entrevista">
+    <div class="card h-100">
+        <img src="img/alunos/21.jpg" alt="Foto de Maria Eduarda" class="aluno-img" />
+        <div class="card-body">
+            <h5 class="card-title">Maria Eduarda Calixto da Silva</h5>
+            <p class="card-sub">Entrevista</p>
+            <p class="card-text">Participou das gravações de vídeo da entrevistas e ajudou no jornal.</p>
+            <div class="aluno-details">
+                <small><i class="fas fa-star me-2"></i>Turma: 3003</small>
+                <small><i class="fas fa-id-card me-2"></i>Número: 21</small>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Raabe Caroline da Silva Pereira Alves -->
+<div class="col-md-6 col-lg-4 aluno-card" data-category="edição">
+    <div class="card h-100">
+        <img src="img/alunos/22.jpg" alt="Foto de Raabe" class="aluno-img" />
+        <div class="card-body">
+            <h5 class="card-title">Raabe Caroline da Silva Pereira Alves</h5>
+            <p class="card-sub">Edição dos vídeos</p>
+            <p class="card-text">Ficou responsável pela edição do vídeo e também participou da equipe de entrevistas, e também fez outras coisas pra ajudar.</p>
+            <div class="aluno-details">
+                <small><i class="fas fa-star me-2"></i>Turma: 3003</small>
+                <small><i class="fas fa-id-card me-2"></i>Número: 22</small>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Jonas Leitão -->
+<div class="col-md-6 col-lg-4 aluno-card" data-category="entrevista">
+    <div class="card h-100">
+        <img src="img/alunos/11.jpg" alt="Foto de Jonas" class="aluno-img" />
+        <div class="card-body">
+            <h5 class="card-title">Jonas Leitão</h5>
+            <p class="card-sub">Entrevista</p>
+            <p class="card-text">Participou das entrevistas e também fez parte da edição dos vídeos.</p>
+            <div class="aluno-details">
+                <small><i class="fas fa-star me-2"></i>Turma: 3003</small>
+                <small><i class="fas fa-id-card me-2"></i>Número: 11</small>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Cristiane de Araújo Costa -->
+<div class="col-md-6 col-lg-4 aluno-card" data-category="entrevista">
+    <div class="card h-100">
+        <img src="img/alunos/2.jpg" alt="Foto de Cristiane" class="aluno-img" />
+        <div class="card-body">
+            <h5 class="card-title">Cristiane de Araújo Costa</h5>
+            <p class="card-sub">Entrevista</p>
+            <p class="card-text">Participou das entrevistas como colaboradora da equipe de mídia do projeto.</p>
+            <div class="aluno-details">
+                <small><i class="fas fa-star me-2"></i>Turma: 3003</small>
+                <small><i class="fas fa-id-card me-2"></i>Número: 02</small>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Kawani Anjo da Silva -->
+<div class="col-md-6 col-lg-4 aluno-card" data-category="entrevista">
+    <div class="card h-100">
+        <img src="img/alunos/16.jpg" alt="Foto de Kawani" class="aluno-img" />
+        <div class="card-body">
+            <h5 class="card-title">Kawani Anjo da Silva</h5>
+            <p class="card-sub">Entrevista</p>
+            <p class="card-text">Responsável pela condução e participação ativa nas entrevistas do projeto.</p>
+            <div class="aluno-details">
+                <small><i class="fas fa-star me-2"></i>Turma: 3003</small>
+                <small><i class="fas fa-id-card me-2"></i>Número: 16</small>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Hyago Santiago -->
+<div class="col-md-6 col-lg-4 aluno-card" data-category="entrevista">
+    <div class="card h-100">
+        <img src="img/alunos/8.jpg" alt="Foto de Hyago" class="aluno-img" />
+        <div class="card-body">
+            <h5 class="card-title">Hyago Santiago</h5>
+            <p class="card-sub">Entrevista</p>
+            <p class="card-text">Fez parte da equipe de entrevista, e também fez outras coisas pra ajudar.</p>
+            <div class="aluno-details">
+                <small><i class="fas fa-star me-2"></i>Turma: 3003</small>
+                <small><i class="fas fa-id-card me-2"></i>Número: 08</small>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Kethelen Cristine Ferreira da Silva -->
+<div class="col-md-6 col-lg-4 aluno-card" data-category="entrevista">
+    <div class="card h-100">
+        <img src="img/alunos/19.jpg" alt="Foto de Kethllen" class="aluno-img" />
+        <div class="card-body">
+            <h5 class="card-title">Kethelen Cristine Ferreira da Silva</h5>
+            <p class="card-sub">Entrevista</p>
+            <p class="card-text">Colaborou nas entrevistas e ajudou com informações para o jornal.</p>
+            <div class="aluno-details">
+                <small><i class="fas fa-star me-2"></i>Turma: 3003</small>
+                <small><i class="fas fa-id-card me-2"></i>Número: 19</small>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- karyne Mattos de Castro -->
+<div class="col-md-6 col-lg-4 aluno-card" data-category="Jornal">
+    <div class="card h-100">
+        <img src="img/alunos/15.jpg" alt="Foto de karyne" class="aluno-img" />
+        <div class="card-body">
+            <h5 class="card-title">karyne Mattos de Castro</h5>
+            <p class="card-sub">Jornal</p>
+            <p class="card-text">Ajudou no projeto do jornal.</p>
+            <div class="aluno-details">
+                <small><i class="fas fa-star me-2"></i>Turma: 3003</small>
+                <small><i class="fas fa-id-card me-2"></i>Número: 15</small>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Sophia da Silva Felício -->
+<div class="col-md-6 col-lg-4 aluno-card" data-category="jornal">
+    <div class="card h-100">
+        <img src="img/alunos/26.jpg" alt="Foto de Sophia" class="aluno-img" />
+        <div class="card-body">
+            <h5 class="card-title">Sophia da Silva Felício</h5>
+            <p class="card-sub">Jornal</p>
+            <p class="card-text">Ajudou no projeto do jornal.</p>
+            <div class="aluno-details">
+                <small><i class="fas fa-star me-2"></i>Turma: 3003</small>
+                <small><i class="fas fa-id-card me-2"></i>Número: 26</small>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Kaio dos Santos -->
+<div class="col-md-6 col-lg-4 aluno-card" data-category="entrevista">
+    <div class="card h-100">
+        <img src="img/alunos/14.jpg" alt="Foto de Kaio" class="aluno-img" />
+        <div class="card-body">
+            <h5 class="card-title">Kaio dos Santos</h5>
+            <p class="card-sub">Entrevista</p>
+            <p class="card-text">Entrevistador nas atividades do projeto.</p>
+            <div class="aluno-details">
+                <small><i class="fas fa-star me-2"></i>Turma: 3003</small>
+                <small><i class="fas fa-id-card me-2"></i>Número: 14</small>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Vitor Hugo -->
+<div class="col-md-6 col-lg-4 aluno-card" data-category="jornal">
+    <div class="card h-100">
+        <img src="img/alunos/29.jpg" alt="Foto de Vitor Hugo" class="aluno-img" />
+        <div class="card-body">
+            <h5 class="card-title">Vitor Hugo</h5>
+            <p class="card-sub">Jornal</p>
+            <p class="card-text">Ajudou no projeto do jornal.</p>
+            <div class="aluno-details">
+                <small><i class="fas fa-star me-2"></i>Turma: 3003</small>
+                <small><i class="fas fa-id-card me-2"></i>Número: 29</small>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Juan -->
+<div class="col-md-6 col-lg-4 aluno-card" data-category="pesquisa">
+    <div class="card h-100">
+        <img src="img/alunos/12.jpg" alt="Foto de Juan" class="aluno-img" />
+        <div class="card-body">
+            <h5 class="card-title">Juan</h5>
+            <p class="card-sub">Pesquisa</p>
+            <p class="card-text">Responsável pela pesquisa dos conteúdos do projeto, contribuindo com informações relevantes e fundamentação teórica.</p>
+            <div class="aluno-details">
+                <small><i class="fas fa-star me-2"></i>Turma: 3003</small>
+                <small><i class="fas fa-id-card me-2"></i>Número: 12</small>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Iasmin -->
+<div class="col-md-6 col-lg-4 aluno-card" data-category="pesquisa">
+    <div class="card h-100">
+        <img src="img/alunos/9.jpg" alt="Foto de Iasmin" class="aluno-img" />
+        <div class="card-body">
+            <h5 class="card-title">Iasmin</h5>
+            <p class="card-sub">Pesquisa</p>
+            <p class="card-text">Trabalhou na etapa de pesquisa, reunindo dados essenciais para o desenvolvimento do projeto.</p>
+            <div class="aluno-details">
+                <small><i class="fas fa-star me-2"></i>Turma: 3003</small>
+                <small><i class="fas fa-id-card me-2"></i>Número: 9</small>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="col-md-6 col-lg-4 aluno-card" data-category="Desconhecido">
+    <div class="card h-100">
+        <img src="img/alunos/gg.jpg" alt="Foto de Iasmin" class="aluno-img" />
+        <div class="card-body">
+            <h5 class="card-title">Outros Colaboradores</h5>
+            <p class="card-sub">Categoria: Desconhecido</p>
+            <p class="card-text">Pessoas que contribuíram de alguma forma.</p>
+            <div class="aluno-details">
+                <small><i class="fas fa-star me-2"></i>Turma: 3003</small>
+                <small><i class="fas fa-id-card me-2"></i>Número: **</small>
+            </div>
+        </div>
+    </div>
+</div>
+
+        <!-- Rodapé -->
+        <footer class="bg-primary text-white py-4 mt-4">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <h5>Redes Sociais</h5>
+                        <div class="social-icons">
+                            <a href="https://www.instagram.com/cebangu_3003_?igsh=MW0yamx4NG9sZ2VzMA==" class="text-white me-3"><i class="fab fa-instagram fa-2x"></i></a>
+                            <a href="https://vm.tiktok.com/ZMSuWEkAu/" class="text-white me-3"><i class="fab fa-tiktok fa-2x"></i></a>
+
+                    </div>
+                </div>
+                <hr>
+                <div class="text-center">
+                    <p class="mb-0">Nacht © 2025 - Todos os Direitos Reservados</p>
+                    <p class="mb-0">Turma: 3003 | Número: 5</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/alunos.js"></script>
+</body>
+</html>

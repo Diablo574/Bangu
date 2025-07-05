@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo da Forca - C.E. BANGU</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/forca.css">
+    <link rel="icon" href="img/logo-bangu.png">
+</head>
+<body>
+    <div class="container">
+        <h1><i class="fas fa-gamepad"></i> Jogo da Forca</h1>
+        
+        <div class="game-container">
+            <div class="forca">
+                <div id="boneco">
+                    <!-- Partes do boneco serão adicionadas via JavaScript -->
+                </div>
+            </div>
+            
+            <div class="palavra-container">
+                <div id="palavra"></div>
+                <div id="dica">Dica: <span></span></div>
+            </div>
+            
+            <div class="teclado">
+                <!-- Letras serão adicionadas via JavaScript -->
+            </div>
+            
+            <div class="status">
+                <p>Erros: <span id="erros">0/6</span></p>
+                <button id="reset-forca">Novo Jogo</button>
+            </div>
+        </div>
+        
+        <!-- Modal de Resultado -->
+        <div id="resultadoModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2 id="resultadoTitulo"></h2>
+                <p id="resultadoMensagem"></p>
+                <p>A palavra era: <strong id="palavraCorreta"></strong></p>
+                <button id="jogarNovamente">Jogar Novamente</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/forca.js"></script>
+</body>
+</html>

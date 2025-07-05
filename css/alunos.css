@@ -1,0 +1,126 @@
+/* Estilos para todos os cards de alunos */
+.aluno-card {
+    margin: 20px 0;
+    transition: transform 0.3s ease;
+}
+
+.aluno-card .card {
+    background: var(--bg-secondary);
+    border-radius: 15px;
+    border: none;
+    box-shadow: 0 4px 20px var(--shadow-color);
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+/* Container da foto e informações */
+.aluno-card .card-content {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Foto redonda */
+.aluno-card .aluno-img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--accent-color);
+    margin-right: 20px;
+    box-shadow: 0 3px 10px var(--shadow-color);
+}
+
+/* Informações do aluno */
+.aluno-card .aluno-info {
+    flex: 1;
+}
+
+.aluno-card .aluno-nome {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 0;
+    color: var(--text-primary);
+}
+
+.aluno-card .aluno-funcao {
+    font-size: 1rem;
+    color: var(--accent-color);
+    margin: 5px 0;
+    font-weight: 500;
+}
+
+.aluno-card .aluno-detalhes {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    margin: 0;
+}
+
+/* Barra inferior com informações */
+.aluno-card .info-bar {
+    background: var(--accent-color);
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9rem;
+}
+
+/* Efeito hover */
+.aluno-card:hover {
+    transform: translateY(-5px);
+}
+
+.aluno-card:hover .card {
+    box-shadow: 0 8px 25px var(--shadow-color);
+}
+
+/* Badge de categoria */
+.aluno-card .category-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    box-shadow: 0 2px 5px var(--shadow-color);
+    border: 1px solid var(--border-color);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .aluno-card .card-content {
+        padding: 15px;
+    }
+    
+    .aluno-card .aluno-img {
+        width: 70px;
+        height: 70px;
+        margin-right: 15px;
+    }
+    
+    .aluno-card .aluno-nome {
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .aluno-card .card-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .aluno-card .aluno-img {
+        margin-right: 0;
+        margin-bottom: 15px;
+    }
+    
+    .aluno-card .info-bar {
+        flex-direction: column;
+        gap: 5px;
+        text-align: center;
+    }
+}

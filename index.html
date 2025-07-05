@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C.E. BANGU</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="icon" href="img/logo-bangu.png">
+</head>
+<body>
+    <!-- Menu Lateral (Original) -->
+    <nav id="sidebar">
+        <div class="sidebar-header">
+            <img src="img/logo-bangu.png" alt="Logo C.E. BANGU" class="logo">
+            <h3>C.E. BANGU</h3>
+            <button id="sidebarCollapse" class="btn btn-toggle">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+
+        <ul class="list-unstyled components">
+            <li class="active">
+                <a href="index.html"><i class="fas fa-home"></i> <span>Home</span></a>
+            </li>
+            <li>
+                <a href="professores.html"><i class="fas fa-chalkboard-teacher"></i> <span>Professores</span></a>
+            </li>
+            <li>
+                <a href="alunos.html"><i class="fas fa-users"></i> <span>Alunos</span></a>
+            </li>
+            <li>
+                <a href="jornal.html"><i class="fas fa-newspaper"></i> <span>Jornal</span></a>
+            </li>
+            <li>
+                <a href="historia.html"><i class="fas fa-landmark"></i> <span>História</span></a>
+            </li>
+            <li>
+                <a href="quiz.html"><i class="fas fa-question-circle"></i> <span>Quiz</span></a>
+            </li>
+            <li>
+                <a href="entrevistas.html"><i class="fas fa-microphone-alt"></i> <span>Entrevistas</span></a>
+            </li>
+            <li>
+                <a href="curiosidades.html"><i class="fas fa-bell"></i> <span>Curiosidades</span></a>
+            </li>
+        </ul>
+
+        <div class="sidebar-footer">
+            <div class="theme-switcher">
+                <button id="themeToggle" class="btn btn-toggle">
+                    <i class="fas fa-moon"></i> Tema Escuro
+                </button>
+            </div>
+            
+            <div class="aluno-info">
+                <img src="img/aluno-destaque.jpg" alt="Aluno Nacht" class="aluno-foto">
+                <div class="aluno-detalhes">
+                    <strong>Nacht</strong>
+                    <small>Turma: 3003</small>
+                    <small>Número: 5</small>
+                    <small>Desenvolvedor</small>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Conteúdo Principal -->
+    <div id="content">
+        <!-- Top Bar Mobile (Original) -->
+        <nav class="navbar navbar-expand d-flex d-md-none">
+            <div class="container-fluid">
+                <button id="sidebarCollapseMobile" class="btn btn-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="navbar-brand mx-auto">
+                    <img src="img/logo-bangu.png" height="30" alt="Logo">
+                </div>
+                <button id="themeToggleMobile" class="btn btn-toggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+        </nav>
+
+        <!-- Conteúdo (Cards atualizados) -->
+        <div class="container-fluid px-3 px-md-4 py-4">
+            <div class="row mb-4">
+                <div class="col-12">
+                    <h1 class="mb-4">Bem-vindo ao C.E. BANGU</h1>
+                    <p class="lead">Educação de qualidade para construir o futuro</p>
+                </div>
+            </div>
+
+            <!-- Cards de Destaque -->
+            <div class="row g-4">
+                <!-- Card Data Atual (Novo) -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100">
+                        <div class="card-body text-center">
+                            <h5 class="card-title"><i class="fas fa-calendar-day me-2"></i>Data Atual</h5>
+                            <div class="display-4 text-primary my-3" id="current-day"></div>
+                            <p class="card-text" id="current-date"></p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card Visitantes (Contador REAL) -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100">
+                        <div class="card-body text-center">
+                            <h5 class="card-title"><i class="fas fa-users me-2"></i>Visitantes</h5>
+                            <a href="https://www.webcontadores.com" title="Contador de Visitas">
+                                <img src="https://counter1.optistats.ovh/private/webcontadores.php?c=a66lcbjgtr9ww9l65ctbxlhmqss9n6zq" 
+                                     border="0" title="Contador de Visitas" alt="Contador de Visitas" class="img-fluid">
+                            </a>
+                            <p class="card-text mt-2">Acompanhe nosso crescimento</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card Curiosidades (Original) -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100">
+                        <img src="img/curiosidades.jpg" class="card-img-top" alt="Curiosidades">
+                        <div class="card-body">
+                            <h5 class="card-title"><i class="fas fa-bell me-2"></i>Curiosidades</h5>
+                            <p class="card-text">Fique por dentro das últimas notícias e eventos da nossa escola.</p>
+                            <a href="curiosidades.html" class="btn btn-primary">Ver Curiosidades</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card Entrevistas (Original) -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100">
+                        <img src="img/entrevistas.jpg" class="card-img-top" alt="Entrevistas">
+                        <div class="card-body">
+                            <h5 class="card-title"><i class="fas fa-microphone-alt me-2"></i>Entrevistas</h5>
+                            <p class="card-text">Conheça as histórias inspiradoras de nossos professores e alunos.</p>
+                            <a href="entrevistas.html" class="btn btn-primary">Ver Entrevistas</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card Desenvolvedor (Original) -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100">
+                        <img src="img/desenvolvedor.jpg" class="card-img-top" alt="Desenvolvedor">
+                        <div class="card-body">
+                            <h5 class="card-title"><i class="fas fa-code me-2"></i>Desenvolvedor</h5>
+                            <p class="card-text">Conheça o aluno responsável pelo desenvolvimento deste site.</p>
+                            <a href="jogo.html" class="btn btn-primary">Saiba Mais</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Seção Desenvolvedor (Original) -->
+            <div id="desenvolvedor" class="row mt-5">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-header bg-primary text-white">
+                            <h4 class="mb-0"><i class="fas fa-star me-2"></i>Aluno Desenvolvedor</h4>
+                        </div>
+                        <div class="card-body">
+                            <div class="row align-items-center">
+                                <div class="col-md-3 text-center mb-3 mb-md-0">
+                                    <img src="img/aluno-destaque.jpg" alt="Aluno Nacht" class="img-fluid rounded-circle" style="max-width: 150px;">
+                                </div>
+                                <div class="col-md-9">
+                                    <h3>Gabriel</h3>
+                                    <p class="card-subtitle">Turma: 3003 | Número: 5 | Desenvolvedor</p>
+                                    <p>Aluno responsável pelo desenvolvimento deste site.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Rodapé (Original) -->
+        <footer class="bg-primary text-white py-4 mt-4">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <h5>Redes Sociais</h5>
+                        <div class="social-icons">
+                            <a href="https://www.instagram.com/cebangu_3003_?igsh=MW0yamx4NG9sZ2VzMA==" class="text-white me-3"><i class="fab fa-instagram fa-2x"></i></a>
+                            <a href="https://vm.tiktok.com/ZMSuWEkAu/" class="text-white me-3"><i class="fab fa-tiktok fa-2x"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div class="text-center">
+                    <p class="mb-0">Nacht © 2025 - Todos os Direitos Reservados</p>
+                    <p class="mb-0">Turma: 3003 | Número: 5</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entrevistas - C.E. BANGU</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/entrevistas.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="icon" href="img/logo-bangu.png">
+</head>
+<body>
+    <!-- Menu Lateral -->
+    <nav id="sidebar">
+        <div class="sidebar-header">
+            <img src="img/logo-bangu.png" alt="Logo C.E. BANGU" class="logo">
+            <h3>C.E. BANGU</h3>
+            <button id="sidebarCollapse" class="btn btn-toggle">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+
+        <ul class="list-unstyled components">
+            <li><a href="index.html"><i class="fas fa-home"></i> <span>Home</span></a></li>
+            <li><a href="professores.html"><i class="fas fa-chalkboard-teacher"></i> <span>Professores</span></a></li>
+            <li><a href="alunos.html"><i class="fas fa-users"></i> <span>Alunos</span></a></li>
+            <li><a href="jornal.html"><i class="fas fa-newspaper"></i> <span>Jornal</span></a></li>
+            <li><a href="historia.html"><i class="fas fa-landmark"></i> <span>História</span></a></li>
+            <li><a href="quiz.html"><i class="fas fa-question-circle"></i> <span>Quiz</span></a></li>
+            <li class="active"><a href="entrevistas.html"><i class="fas fa-microphone-alt"></i> <span>Entrevistas</span></a></li>
+            <li><a href="curiosidades.html"><i class="fas fa-bell"></i> <span>Curiosidades</span></a></li>
+        </ul>
+
+        <div class="sidebar-footer">
+            <div class="theme-switcher">
+                <button id="themeToggle" class="btn btn-sm btn-toggle">
+                    <i class="fas fa-moon"></i> Tema Escuro
+                </button>
+            </div>
+            <div class="aluno-info">
+                <img src="img/aluno-destaque.jpg" alt="Aluno Nacht" class="aluno-foto">
+                <div class="aluno-detalhes">
+                    <strong>Nacht</strong>
+                    <small>Turma: 3003</small>
+                    <small>Número: 5</small>
+                    <small>Desenvolvedor</small>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Conteúdo Principal -->
+    <div id="content">
+        <!-- Top Bar Mobile -->
+        <nav class="navbar navbar-expand d-flex d-md-none">
+            <div class="container-fluid">
+                <button id="sidebarCollapseMobile" class="btn btn-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="navbar-brand mx-auto">
+                    <img src="img/logo-bangu.png" height="30" alt="Logo">
+                </div>
+                <button id="themeToggleMobile" class="btn btn-toggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+        </nav>
+
+        <!-- Conteúdo das Entrevistas -->
+        <div class="container-fluid px-3 px-md-4 py-4">
+            <div class="row mb-4">
+                <div class="col-12">
+                    <h1 class="mb-4"><i class="fas fa-microphone-alt me-3"></i>Entrevistas</h1>
+                    <p class="lead">Entre o Presente e o Passado: Professores Atuais e Ex-Alunos em Memória</p>
+                </div>
+            </div>
+
+            <!-- Cards de Entrevistas -->
+            <div class="row g-4">
+                <!-- Entrevista 1 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card entrevista-card h-100">
+                        <div class="card-img-top entrevista-imagem" style="background-image: url('img/entrevistas/entrevistado1.jpg');"></div>
+                        <div class="card-body">
+                            <h5 class="card-title">Janete Correia</h5>
+                            <p class="card-subtitle">Ex-aluno (1982-1983)</p>
+                            <p class="card-text">"Estudei aqui quando ainda era escola particular. Ver que o prédio e a história continuam vivos é muito especial."</p>
+                        </div>
+                        <div class="card-footer bg-transparent border-top-0">
+                            <button class="btn btn-primary btn-assistir" data-video="https://files.catbox.moe/wnak96.mp4">
+                                <i class="fas fa-play me-2"></i>Assistir Entrevista
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Entrevista 2 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card entrevista-card h-100">
+                        <div class="card-img-top entrevista-imagem" style="background-image: url('img/entrevistas/entrevistado1.jpg');"></div>
+                        <div class="card-body">
+                            <h5 class="card-title">Irineu Vila do Nascimento</h5>
+                            <p class="card-subtitle">Professor de Matemática e Física</p>
+                            <p class="card-text">
+                                Atua no Colégio Bangu há 20 anos. Relata que os principais desafios estão no ensino da matemática.
+                            </p>
+                        </div>
+                        <div class="card-footer bg-transparent border-top-0">
+                            <button class="btn btn-primary btn-assistir" data-video="https://files.catbox.moe/jej4i9.mp4">
+                                <i class="fas fa-play me-2"></i>Assistir Entrevista
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+ <!-- Entrevista 3 -->
+<div class="col-md-6 col-lg-4">
+    <div class="card entrevista-card h-100">
+        <div class="card-img-top entrevista-imagem" style="background-image: url('img/entrevistas/entrevistado1.jpg');"></div>
+        <div class="card-body">
+            <h5 class="card-title">Bianca Dias</h5>
+            <p class="card-subtitle">Professora de Língua Inglesa</p>
+            <p class="card-text">
+                Ingressou no Colégio Bangu em 2005 e atua há 20 anos. Destaca as relações humanas como ponto forte do ambiente escolar. Aponta desafios como evasão escolar e infraestrutura, defendendo mais investimentos e formação continuada.
+            </p>
+        </div>
+        <div class="card-footer bg-transparent border-top-0">
+            <button class="btn btn-primary btn-assistir" data-video="https://files.catbox.moe/br0bss.mp4">
+                <i class="fas fa-play me-2"></i>Assistir Entrevista
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- Entrevista 4 -->
+<div class="col-md-6 col-lg-4">
+    <div class="card entrevista-card h-100">
+        <div class="card-img-top entrevista-imagem" style="background-image: url('img/entrevistas/entrevistado1.jpg');"></div>
+        <div class="card-body">
+            <h5 class="card-title">Ana Chaves</h5>
+            <p class="card-subtitle">Professora de Análises Clínicas</p>
+            <p class="card-text">
+                Há 21 anos no Colégio Bangu, valoriza o impacto social do ensino público. Enfrenta desafios relacionados à aprendizagem e defende melhorias no acesso à educação e nas condições de ensino para formar bons profissionais.
+            </p>
+        </div>
+        <div class="card-footer bg-transparent border-top-0">
+            <button class="btn btn-primary btn-assistir" data-video="https://files.catbox.moe/21qp8a.mp4">
+                <i class="fas fa-play me-2"></i>Assistir Entrevista
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- Entrevista 5 -->
+<div class="col-md-6 col-lg-4">
+    <div class="card entrevista-card h-100">
+        <div class="card-img-top entrevista-imagem" style="background-image: url('img/entrevistas/entrevistado1.jpg');"></div>
+        <div class="card-body">
+            <h5 class="card-title">Maria Regina</h5>
+            <p class="card-subtitle">Professora de Língua Portuguesa</p>
+            <p class="card-text">
+Com 27 anos na rede estadual e 25 no Colégio Bangu, Maria Regina destaca a boa convivência com alunos e colegas, a importância de evoluir na profissão e a necessidade de mais apoio na escola.
+            </p>
+        </div>
+        <div class="card-footer bg-transparent border-top-0">
+            <button class="btn btn-primary btn-assistir" data-video="https://files.catbox.moe/3gm841.mp4">
+                <i class="fas fa-play me-2"></i>Assistir Entrevista
+            </button>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- Entrevista 6 -->
+<div class="col-md-6 col-lg-4">
+    <div class="card entrevista-card h-100">
+        <div class="card-img-top entrevista-imagem" style="background-image: url('img/entrevistas/entrevistado1.jpg');"></div>
+        <div class="card-body">
+            <h5 class="card-title">Cristiano</h5>
+            <p class="card-subtitle">Professor de Língua Portuguesa</p>
+            <p class="card-text">
+                Há 3 anos no Colégio Bangu e 15 na rede estadual, valoriza o bom convívio com alunos e colegas e destaca a importância das atividades e do diálogo no ambiente escolar.
+            </p>
+        </div>
+        <div class="card-footer bg-transparent border-top-0">
+            <button class="btn btn-primary btn-assistir" data-video="https://files.catbox.moe/n0w4hx.mp4">
+                <i class="fas fa-play me-2"></i>Assistir Entrevista
+          </button>
+        </div>
+     </div>
+  </div>
+</div>
+
+            <!-- Seção de Depoimentos em Texto -->
+            <div class="container-fluid px-3 px-md-4 py-4">
+                <div class="row mb-4">
+                    <div class="col-12">
+                        <h2 class="mb-4"><i class="fas fa-quote-left me-3"></i>Depoimentos em Texto</h2>
+                        <p class="lead">Memórias compartilhadas por ex-alunos em formato escrito</p>
+                    </div>
+                </div>
+
+                <div class="row g-4">
+                    <!-- Depoimento 1 -->
+                    <div class="col-md-6">
+                        <div class="card entrevista-card h-100">
+                            <div class="card-body">
+                                <h5 class="card-title">Pablo</h5>
+                                <p class="card-subtitle">Ex-aluno (1989-1990)</p>
+                                <blockquote class="card-text">
+                                    "Então lembro que quando entrei no Colégio Bangu, a galera da minha geração anos 89/90 ainda era mais comportada, o colégio era bem organizado com horários de aula, calendário de provas e projetos, na hora do intervalo toda sexta tinha pagode ao vivo lá e éramos nós que fazíamos a festa inclusive eu fazia parte do grupo 😅<br><br>
+                                    Sempre teve a galera da confusão, que brigava, pichava muro, vivia parando na direção por conta de indisciplina na sala de aula, os professores tinham pulso firme, a direção era respeitada, quase não tínhamos tempo vago."
+                                </blockquote>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Depoimento 2 -->
+                    <div class="col-md-6">
+                        <div class="card entrevista-card h-100">
+                            <div class="card-body">
+                                <h5 class="card-title">Heloá Andrade</h5>
+                                <p class="card-subtitle">Ex-aluna (2010-2012)</p>
+                                <blockquote class="card-text">
+                                    "Me chamo Heloá Andrade, hoje tenho 33 anos e fui aluna no colégio Bangu no ano de 2010 a 2012, foram anos mágicos, aprendi, conheci amigos que levo até hoje na minha vida, tive professores maravilhosos e muita coisa me marcou nesse tempo.<br><br>
+                                    Os passeios, a hora de chegar e não perder a aula, a hora do intervalo, os estudos em grupo e não dava pra pular aula e jogar queimado na quadra, tudo era bem controlado e isso foi muito bom pra eu ser a mulher que sou hoje. Se pudesse tinha aproveitado mais, sou muito grata por tudo.<br><br>
+                                    Uma das pessoas que mais me marcaram foi o diretor Hamilton Viana, ele fazia toda a diferença naquele lugar, homem correto, brincalhão e sempre disposto a ajudar, foi o melhor diretor que eu já vi e conheci até hoje."
+                                </blockquote>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Seção de Entrevista em Áudio -->
+            <div class="container-fluid px-3 px-md-4 py-4">
+                <div class="row mb-4">
+                    <div class="col-12">
+                        <h2 class="mb-4"><i class="fas fa-headphones me-3"></i>Entrevista em Áudio</h2>
+                        <p class="lead">Memórias de um ex-aluno do Colégio Bangu</p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-8 mx-auto">
+                        <div class="card entrevista-card">
+                            <div class="card-body">
+                                <h5 class="card-title">Felipe</h5>
+                                <p class="card-subtitle">Ex-aluno (2006-2008)</p>
+                                <div class="audio-player mt-4">
+                                    <audio controls class="w-100">
+                                        <source src="audio/AUD-20250624-WA0012.mp3" type="audio/mpeg">
+                                        Seu navegador não suporta o elemento de áudio.
+                                    </audio>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal de Vídeo -->
+            <div class="modal fade" id="videoModal" tabindex="-1" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="videoModalLabel">Entrevista</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="video-container">
+                                <video id="videoPlayer" controls playsinline preload="auto">
+                                    <!-- Source será inserido via JavaScript -->
+                                </video>
+                                <div class="video-loading">
+                                    <div class="spinner-border text-primary" role="status">
+                                        <span class="visually-hidden">Carregando...</span>
+                                    </div>
+                                    <p class="mt-2">Carregando vídeo...</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                            <a id="videoDownloadLink" class="btn btn-outline-primary" href="#" target="_blank">
+                                <i class="fas fa-download"></i> Baixar
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Rodapé -->
+        <footer class="bg-primary text-white py-4 mt-4">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <h5>Redes Sociais</h5>
+                        <div class="social-icons">
+                            <a href="https://www.instagram.com/cebangu_3003_?igsh=MW0yamx4NG9sZ2VzMA==" class="text-white me-3"><i class="fab fa-instagram fa-2x"></i></a>
+                            <a href="https://vm.tiktok.com/ZMSuWEkAu/" class="text-white me-3"><i class="fab fa-tiktok fa-2x"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div class="text-center">
+                    <p class="mb-0">Nacht © 2025 - Todos os Direitos Reservados</p>
+                    <p class="mb-0">Turma: 3003 | Número: 5</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/entrevistas.js"></script>
+</body>
+</html>

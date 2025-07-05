@@ -1,0 +1,68 @@
+/* Estilos específicos para a página de Professores */
+
+/* Imagem do Professor */
+.professor-img {
+    height: 250px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-bottom: 1px solid var(--border-color);
+}
+
+/* Detalhes do Professor */
+.professor-details {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border-color);
+}
+
+.professor-details small {
+    display: block;
+    color: var(--text-secondary);
+    margin-bottom: 0.3rem;
+}
+
+.card-subtitle {
+  font-size: 1rem;         /* ou ajuste conforme o tamanho desejado */
+  font-weight: 500;        /* leve destaque */
+  margin-bottom: 0.5rem;   /* equivalente ao mb-2 do Bootstrap */
+  color: #6c757d;          /* cor de texto "muted" típica do Bootstrap */
+}
+
+/* Filtros */
+.filter-buttons {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.filter-buttons .btn {
+    margin-bottom: 0.5rem;
+}
+
+/* Efeitos de hover nos cards */
+.professor-card .card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.professor-card:hover .card {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px var(--shadow-color);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .professor-img {
+        height: 200px;
+    }
+}
+
+@media (max-width: 576px) {
+    .professor-img {
+        height: 180px;
+    }
+    
+    .filter-buttons .btn {
+        font-size: 0.8rem;
+        padding: 0.25rem 0.5rem;
+    }
+}

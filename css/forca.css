@@ -1,0 +1,306 @@
+:root {
+    --primary-color: #2c3e50;
+    --accent-color: #e74c3c;
+    --bg-primary: #f8f9fa;
+    --bg-secondary: #ffffff;
+    --text-primary: #2c3e50;
+    --text-secondary: #7f8c8d;
+    --border-color: #dee2e6;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="dark"] {
+    --primary-color: #34495e;
+    --accent-color: #e74c3c;
+    --bg-primary: #2c3e50;
+    --bg-secondary: #34495e;
+    --text-primary: #ecf0f1;
+    --text-secondary: #bdc3c7;
+    --border-color: #4a5a6d;
+    --shadow-color: rgba(0, 0, 0, 0.3);
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+    transition: all 0.3s ease;
+}
+
+.container {
+    text-align: center;
+    max-width: 800px;
+    width: 100%;
+    padding: 25px;
+    background-color: var(--bg-secondary);
+    border-radius: 12px;
+    box-shadow: 0 8px 20px var(--shadow-color);
+    border: 1px solid var(--border-color);
+}
+
+h1 {
+    color: var(--accent-color);
+    margin-bottom: 25px;
+    font-size: 2.2rem;
+}
+
+.game-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+.forca {
+    width: 300px;
+    height: 300px;
+    position: relative;
+    margin: 0 auto;
+}
+
+#boneco {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.palavra-container {
+    margin: 20px 0;
+    min-width: 300px;
+}
+
+#palavra {
+    font-size: 2rem;
+    letter-spacing: 10px;
+    margin: 20px 0;
+    min-height: 50px;
+    font-family: monospace;
+}
+
+#dica {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    margin-top: 10px;
+}
+
+.teclado {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    margin: 20px 0;
+    max-width: 500px;
+}
+
+.tecla {
+    width: 40px;
+    height: 40px;
+    background-color: var(--bg-primary);
+    border: 2px solid var(--border-color);
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s;
+}
+
+.tecla:hover:not(.usada) {
+    background-color: var(--accent-color);
+    color: white;
+    border-color: var(--accent-color);
+}
+
+.tecla.usada {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.status {
+    margin-top: 20px;
+    font-size: 1.2rem;
+}
+
+#reset-forca {
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-top: 10px;
+    transition: all 0.3s;
+}
+
+#reset-forca:hover {
+    background-color: #c0392b;
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.modal-content {
+    background-color: var(--bg-secondary);
+    margin: 15% auto;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 500px;
+    width: 80%;
+    text-align: center;
+    position: relative;
+    color: var(--text-primary);
+}
+
+.close {
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#jogarNovamente {
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-top: 20px;
+    transition: all 0.3s;
+}
+
+#jogarNovamente:hover {
+    background-color: #c0392b;
+}
+
+/* Partes do boneco da forca */
+
+/* Partes da forca (sempre visíveis) */
+#base, #poste, #topo, #corda {
+    display: block !important;
+    background-color: var(--text-primary);
+}
+
+.parte-boneco {
+    position: absolute;
+    background-color: var(--text-primary);
+    display: none;
+}
+
+#base {
+    width: 150px;
+    height: 10px;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#poste {
+    width: 10px;
+    height: 250px;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#topo {
+    width: 100px;
+    height: 10px;
+    top: 0;
+    left: 50%;
+}
+
+#corda {
+    width: 5px;
+    height: 30px;
+    top: 10px;
+    left: calc(50% + 95px);
+}
+
+#cabeca {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    top: 40px;
+    left: calc(50% + 77.5px);
+    border: 5px solid var(--text-primary);
+    background-color: transparent;
+}
+
+#corpo {
+    width: 5px;
+    height: 80px;
+    top: 85px;
+    left: calc(50% + 100px);
+}
+
+#braco-esquerdo {
+    width: 50px;
+    height: 5px;
+    top: 100px;
+    left: calc(50% + 55px);
+    transform: rotate(30deg);
+    transform-origin: right center;
+}
+
+#braco-direito {
+    width: 50px;
+    height: 5px;
+    top: 100px;
+    left: calc(50% + 100px);
+    transform: rotate(-30deg);
+    transform-origin: left center;
+}
+
+#perna-esquerda {
+    width: 50px;
+    height: 5px;
+    top: 160px;
+    left: calc(50% + 55px);
+    transform: rotate(-30deg);
+    transform-origin: right center;
+}
+
+#perna-direita {
+    width: 50px;
+    height: 5px;
+    top: 160px;
+    left: calc(50% + 100px);
+    transform: rotate(30deg);
+    transform-origin: left center;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+    
+    .game-container {
+        flex-direction: column;
+    }
+    
+    .forca {
+        width: 250px;
+        height: 250px;
+    }
+}

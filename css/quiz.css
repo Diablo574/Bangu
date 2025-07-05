@@ -1,0 +1,157 @@
+/* Estilos específicos para a página do Quiz */
+
+.quiz-title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--accent-color);
+    margin-bottom: 0.5rem;
+}
+
+.quiz-subtitle {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+}
+
+/* Progresso do Quiz */
+.quiz-progress {
+    margin-bottom: 2rem;
+}
+
+.progress-text {
+    display: block;
+    text-align: right;
+    color: var(--text-secondary);
+    margin-top: 0.5rem;
+}
+
+/* Card da Pergunta */
+.quiz-question {
+    background: var(--bg-secondary);
+    border-radius: 10px;
+    padding: 25px;
+    box-shadow: 0 3px 10px var(--shadow-color);
+    margin-bottom: 2rem;
+}
+
+.question-text {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: var(--text-primary);
+    margin-bottom: 1.5rem;
+}
+
+/* Opções de Resposta */
+.quiz-options {
+    display: grid;
+    gap: 12px;
+}
+
+.quiz-option {
+    background: var(--bg-primary);
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    padding: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+}
+
+.quiz-option:hover {
+    border-color: var(--accent-color);
+    transform: translateY(-2px);
+}
+
+.quiz-option input[type="radio"] {
+    margin-right: 15px;
+    transform: scale(1.2);
+}
+
+.quiz-option label {
+    cursor: pointer;
+    margin-bottom: 0;
+    flex: 1;
+    color: var(--text-primary);
+}
+
+/* Botões */
+.quiz-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1.5rem;
+}
+
+.quiz-btn {
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.quiz-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Resultado */
+#quiz-result {
+    background: var(--bg-secondary);
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 5px 15px var(--shadow-color);
+}
+
+.result-title {
+    color: var(--text-primary);
+    font-weight: bold;
+}
+
+.result-score {
+    color: var(--accent-color);
+    font-weight: bold;
+}
+
+.result-message {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Feedback das respostas */
+.quiz-option.correct {
+    background-color: rgba(25, 135, 84, 0.1);
+    border-color: #198754;
+}
+
+.quiz-option.incorrect {
+    background-color: rgba(220, 53, 69, 0.1);
+    border-color: #dc3545;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .quiz-title {
+        font-size: 1.8rem;
+    }
+    
+    .question-text {
+        font-size: 1.1rem;
+    }
+    
+    .quiz-option {
+        padding: 12px;
+    }
+}
+
+@media (max-width: 576px) {
+    .quiz-actions {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .quiz-btn {
+        width: 100%;
+    }
+}

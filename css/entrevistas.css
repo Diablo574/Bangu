@@ -1,0 +1,226 @@
+/* Estilos específicos para a página de Entrevistas */
+
+/* Card de Entrevista */
+.entrevista-card {
+    border: none;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px var(--shadow-color);
+    transition: transform 0.3s ease;
+    background: var(--bg-secondary);
+}
+
+.entrevista-card:hover {
+    transform: translateY(-5px);
+}
+
+.entrevista-imagem {
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+}
+
+.entrevista-card .card-body {
+    padding: 1.5rem;
+}
+
+.entrevista-card .card-title {
+    font-size: 1.3rem;
+    color: var(--text-primary);
+}
+
+.entrevista-card .card-subtitle {
+    font-size: 0.9rem;
+    color: var(--accent-color);
+}
+
+.entrevista-card .card-text {
+    color: var(--text-secondary);
+    margin: 1rem 0;
+}
+
+.entrevista-card .card-footer {
+    padding: 0 1.5rem 1.5rem;
+}
+
+/* Modal do Vídeo */
+#videoModal .modal-content {
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    border: none;
+}
+
+#videoModal .modal-header {
+    border-bottom: 1px solid var(--border-color);
+}
+
+#videoModal .modal-footer {
+    border-top: 1px solid var(--border-color);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .entrevista-imagem {
+        height: 180px;
+    }
+}
+
+@media (max-width: 576px) {
+    .entrevista-imagem {
+        height: 160px;
+    }
+    
+    .entrevista-card .card-body {
+        padding: 1rem;
+    }
+}
+
+/* Adicione estas regras ao seu arquivo CSS */
+
+/* Container de vídeo responsivo */
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%; /* Proporção 16:9 */
+    height: 0;
+    overflow: hidden;
+    background: #000;
+}
+
+.video-container video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+}
+
+/* Indicador de carregamento */
+.video-loading {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 10;
+}
+
+.video-loading.hidden {
+    display: none;
+}
+
+/* Mensagem de fallback */
+.video-fallback {
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Controles de qualidade */
+#videoQualityToggle {
+    transition: all 0.3s;
+}
+
+/* Otimização para dispositivos móveis */
+@media (max-width: 768px) {
+    #videoModal .modal-dialog {
+        margin: 0;
+        max-width: 100%;
+        height: 100%;
+    }
+    
+    #videoModal .modal-content {
+        height: 100%;
+        border-radius: 0;
+    }
+    
+    #videoModal .modal-body {
+        padding: 0;
+        flex-grow: 1;
+    }
+    
+    .video-container {
+        height: 100%;
+        padding-bottom: 0;
+    }
+}
+
+/* Estilos para os depoimentos em texto */
+blockquote {
+    font-style: italic;
+    padding-left: 1rem;
+    border-left: 3px solid var(--accent-color);
+    margin: 1rem 0;
+}
+
+.card-text blockquote {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* Estilos para o player de áudio */
+.audio-player {
+    background: var(--bg-secondary);
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 2px 10px var(--shadow-color);
+}
+
+.audio-player audio {
+    width: 100%;
+    outline: none;
+}
+
+/* Estilização dos controles do áudio */
+audio::-webkit-media-controls-panel {
+    background-color: var(--bg-secondary);
+}
+
+audio::-webkit-media-controls-play-button,
+audio::-webkit-media-controls-mute-button {
+    filter: brightness(0) saturate(100%) invert(50%) sepia(100%) saturate(1000%) hue-rotate(200deg);
+}
+
+audio::-webkit-media-controls-current-time-display,
+audio::-webkit-media-controls-time-remaining-display {
+    color: var(--text-primary);
+    font-size: 0.8rem;
+}
+
+/* Responsividade para o player de áudio */
+@media (max-width: 768px) {
+    .audio-player {
+        padding: 10px;
+    }
+}
+
+
+/* Ajuste de espaçamento */
+.card-body {
+    padding: 1.5rem;
+}
+
+/* Estilo para mensagens de erro no player */
+.video-container .has-error {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f8d7da;
+    color: #721c24;
+    padding: 20px;
+}
+
+/* Melhorias no loader */
+.video-loading {
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.video-loading .spinner-border {
+    width: 3rem;
+    height: 3rem;
+}

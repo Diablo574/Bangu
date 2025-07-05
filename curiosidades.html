@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curiosidades - C.E. BANGU</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/curiosidades.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="icon" href="img/logo-bangu.png">
+</head>
+<body>
+    <!-- Menu Lateral -->
+    <nav id="sidebar">
+        <div class="sidebar-header">
+            <img src="img/logo-bangu.png" alt="Logo C.E. BANGU" class="logo">
+            <h3>C.E. BANGU</h3>
+            <button id="sidebarCollapse" class="btn btn-toggle">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+
+        <ul class="list-unstyled components">
+            <li>
+                <a href="index.html"><i class="fas fa-home"></i> <span>Home</span></a>
+            </li>
+            <li>
+                <a href="professores.html"><i class="fas fa-chalkboard-teacher"></i> <span>Professores</span></a>
+            </li>
+            <li>
+                <a href="alunos.html"><i class="fas fa-users"></i> <span>Alunos</span></a>
+            </li>
+            <li>
+                <a href="jornal.html"><i class="fas fa-newspaper"></i> <span>Jornal</span></a>
+            </li>
+            <li>
+                <a href="historia.html"><i class="fas fa-landmark"></i> <span>História</span></a>
+            </li>
+            <li>
+                <a href="quiz.html"><i class="fas fa-question-circle"></i> <span>Quiz</span></a>
+            </li>
+            <li>
+                <a href="entrevistas.html"><i class="fas fa-microphone-alt"></i> <span>Entrevistas</span></a>
+            </li>
+            <li class="active">
+                <a href="novidades.html"><i class="fas fa-lightbulb"></i> <span>Curiosidades</span></a>
+            </li>
+        </ul>
+
+        <div class="sidebar-footer">
+            <div class="theme-switcher">
+                <button id="themeToggle" class="btn btn-sm btn-toggle">
+                    <i class="fas fa-moon"></i> Tema Escuro
+                </button>
+            </div>
+            
+            <div class="aluno-info">
+                <img src="img/aluno-destaque.jpg" alt="Aluno Nacht" class="aluno-foto">
+                <div class="aluno-detalhes">
+                    <strong>Nacht</strong>
+                    <small>Turma: 3003</small>
+                    <small>Número: 5</small>
+                    <small>Desenvolvedor</small>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Conteúdo Principal -->
+    <div id="content">
+        <!-- Top Bar Mobile -->
+        <nav class="navbar navbar-expand d-flex d-md-none">
+            <div class="container-fluid">
+                <button id="sidebarCollapseMobile" class="btn btn-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="navbar-brand mx-auto">
+                    <img src="img/logo-bangu.png" height="30" alt="Logo">
+                </div>
+                <button id="themeToggleMobile" class="btn btn-toggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+        </nav>
+
+        <!-- Conteúdo de Curiosidades -->
+        <div class="container-fluid px-3 px-md-4 py-4">
+            <div class="row mb-4">
+                <div class="col-12">
+                    <h1 class="mb-4"><i class="fas fa-lightbulb me-3"></i>Curiosidades</h1>
+                    <p class="lead">Descubra fatos interessantes e pouco conhecidos sobre nossa escola</p>
+                </div>
+            </div>
+
+
+            <!-- Cards de Curiosidades -->
+            <div class="row g-4 curiosidades-container">
+<!-- Curiosidade 1 -->
+<div class="col-md-6 col-lg-4 curiosidade-card" data-category="historia">
+    <div class="card h-100 curiosidade-card-inner">
+        <div class="card-img-top curiosidade-imagem" style="background-image: url('img/curiosidades/curiosidade1.jpg');">
+            <span class="badge bg-primary">História</span>
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">De escola da Fábrica à rede estadual</h5>
+            <p class="card-text">Antes de ser estadual, o Colégio Bangu era particular, criado para atender os filhos dos funcionários da antiga Fábrica Bangu, uma das maiores indústrias têxteis do Brasil.</p>
+        </div>
+        <div class="card-footer bg-transparent">
+            <button class="btn btn-sm btn-outline-primary btn-saber-mais"
+                data-bs-toggle="modal" data-bs-target="#curiosidadeModal"
+                data-title="De escola da Fábrica à rede estadual"
+                data-content="O Colégio Bangu começou como uma escola particular destinada aos filhos dos trabalhadores da Fábrica Bangu. Com o passar dos anos, foi incorporado à rede pública estadual, atendendo toda a comunidade.">
+                <i class="fas fa-plus-circle me-2"></i>Saber mais
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- Curiosidade 2 -->
+<div class="col-md-6 col-lg-4 curiosidade-card" data-category="arquitetura">
+    <div class="card h-100 curiosidade-card-inner">
+        <div class="card-img-top curiosidade-imagem" style="background-image: url('img/curiosidades/curiosidade1.jpg');">
+            <span class="badge bg-primary">Arquitetura</span>
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">Arquitetura que carrega história</h5>
+            <p class="card-text">O prédio do CEBangu tem uma estrutura antiga e imponente, com detalhes que lembram construções do início do século XX, chamando atenção até hoje na região.</p>
+        </div>
+        <div class="card-footer bg-transparent">
+            <button class="btn btn-sm btn-outline-primary btn-saber-mais"
+                data-bs-toggle="modal" data-bs-target="#curiosidadeModal"
+                data-title="Arquitetura que carrega história"
+                data-content="A arquitetura do Colégio Bangu reflete o estilo das construções do início do século XX, preservando elementos originais que se tornaram parte do patrimônio cultural da comunidade.">
+                <i class="fas fa-plus-circle me-2"></i>Saber mais
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- Curiosidade 3 -->
+<div class="col-md-6 col-lg-4 curiosidade-card" data-category="pessoas">
+    <div class="card h-100 curiosidade-card-inner">
+        <div class="card-img-top curiosidade-imagem" style="background-image: url('img/curiosidades/curiosidade1.jpg');">
+            <span class="badge bg-primary">Pessoas</span>
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">Formando cidadãos de destaque</h5>
+            <p class="card-text">O colégio tem ex-alunos que se tornaram professores, artistas, profissionais da saúde e até políticos, mostrando a força da educação pública da zona oeste.</p>
+        </div>
+        <div class="card-footer bg-transparent">
+            <button class="btn btn-sm btn-outline-primary btn-saber-mais"
+                data-bs-toggle="modal" data-bs-target="#curiosidadeModal"
+                data-title="Formando cidadãos de destaque"
+                data-content="O CEBangu formou gerações de alunos que hoje são referências em suas áreas, atuando como profissionais da saúde, educação, cultura, política e muito mais.">
+                <i class="fas fa-plus-circle me-2"></i>Saber mais
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- Curiosidade 4 -->
+<div class="col-md-6 col-lg-4 curiosidade-card" data-category="movimento">
+    <div class="card h-100 curiosidade-card-inner">
+        <div class="card-img-top curiosidade-imagem" style="background-image: url('img/curiosidades/curiosidade1.jpg');">
+            <span class="badge bg-primary">Movimento</span>
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">Ocupação estudantil em 2016</h5>
+            <p class="card-text">Durante os protestos contra a PEC do Teto de Gastos e cortes na educação, o CEBangu foi ocupado por alunos, como parte de um movimento nacional de resistência estudantil.</p>
+        </div>
+        <div class="card-footer bg-transparent">
+            <button class="btn btn-sm btn-outline-primary btn-saber-mais"
+                data-bs-toggle="modal" data-bs-target="#curiosidadeModal"
+                data-title="Ocupação estudantil em 2016"
+                data-content="Em 2016,  mais de mil escolas do Brasil foram ocupadas pelos alunos, por conta de protestos que estavam acontecendo. O colégio Bangu foi uma dessas escolas ocupadas pelos alunos. O objetivo principal dessas ocupações era responder a medidas governamentais que ameaçavam a educação pública. 
+Diversas escolas ficaram meses sem aula por conta dessas ocupações,  muitos foram prejudicados devido à paralisação.
+O movimento, apesar de ter começado com grande força, acabou perdendo fôlego e sendo derrotado pelo governo, que não cedeu às demandas dos estudantes. 
+Porém, para alguns dos funcionários do colégio Bangu, um dos acontecimentos mais impactantes não foi a ocupação da escola em 2016, e sim a pandemia de 2020. Este foi um momento difícil para todos, onde uma nova organização disponibilizou um calendário de aulas online como uma das medidas de cuidados com a doença. A volta foi um alívio,  mas com muita cautela, pois a doença  não chegou a ser extinguida. Os cuidados ainda eram muito necessários .
+ Da fundação da escola aos dias atuais, houve mudanças na forma de aquisição do cargo de direção. Podemos dizer que deixou de ser monarquia e passou a ser República, ou seja, um cargo que antes era ocupado por indicação passou a a ser preenchido por meio de eleição. Isso, de certa forma, ajudou na organização tanto do ambiente quanto financeira.
+Com relação à educação, houve muitas mudanças, entretanto nem todas foram bem vindas. 
+Apesar disso, todos tivemos que nos adaptar a cada nova legislação e tentar construir uma identidade educacional que garantisse a evolução da educação.">
+                <i class="fas fa-plus-circle me-2"></i>Saber mais
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- Curiosidade 5 -->
+<div class="col-md-6 col-lg-4 curiosidade-card" data-category="projetos">
+    <div class="card h-100 curiosidade-card-inner">
+        <div class="card-img-top curiosidade-imagem" style="background-image: url('img/curiosidades/curiosidade1.jpg');">
+            <span class="badge bg-primary">Projetos</span>
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">Projetos sociais e culturais</h5>
+            <p class="card-text">O CEBangu desenvolve projetos como "Memórias de Bangu" e "Consciência Negra", que resgatam a história do bairro e promovem debates importantes com os alunos.</p>
+        </div>
+        <div class="card-footer bg-transparent">
+            <button class="btn btn-sm btn-outline-primary btn-saber-mais"
+                data-bs-toggle="modal" data-bs-target="#curiosidadeModal"
+                data-title="Projetos sociais e culturais"
+                data-content="Projetos como 'Memórias de Bangu' e 'Consciência Negra' promovem a valorização da história local, da cultura e da diversidade, estimulando o protagonismo dos estudantes e a construção de uma sociedade mais justa.">
+                <i class="fas fa-plus-circle me-2"></i>Saber mais
+            </button>
+        </div>
+    </div>
+</div>
+
+            <!-- Modal para detalhes -->
+            <div class="modal fade" id="curiosidadeModal" tabindex="-1" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="curiosidadeModalLabel"></h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body" id="curiosidadeModalBody">
+                            <!-- Conteúdo será inserido via JavaScript -->
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Rodapé -->
+        <footer class="bg-primary text-white py-4 mt-4">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <h5>Redes Sociais</h5>
+                        <div class="social-icons">
+                            <a href="https://www.instagram.com/cebangu_3003_?igsh=MW0yamx4NG9sZ2VzMA==" class="text-white me-3"><i class="fab fa-instagram fa-2x"></i></a>
+                            <a href="https://vm.tiktok.com/ZMSuWEkAu/" class="text-white me-3"><i class="fab fa-tiktok fa-2x"></i></a>
+
+                    </div>
+                </div>
+                <hr>
+                <div class="text-center">
+                    <p class="mb-0">Nacht © 2025 - Todos os Direitos Reservados</p>
+                    <p class="mb-0">Turma: 3003 | Número: 5</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/curiosidades.js"></script>
+</body>
+</html>

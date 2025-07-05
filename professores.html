@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professores - C.E. BANGU</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/professores.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="icon" href="img/logo-bangu.png">
+</head>
+<body>
+    <!-- Menu Lateral -->
+    <nav id="sidebar">
+        <div class="sidebar-header">
+            <img src="img/logo-bangu.png" alt="Logo C.E. BANGU" class="logo">
+            <h3>C.E. BANGU</h3>
+            <button id="sidebarCollapse" class="btn btn-toggle">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+
+        <ul class="list-unstyled components">
+            <li>
+                <a href="index.html"><i class="fas fa-home"></i> <span>Home</span></a>
+            </li>
+            <li class="active">
+                <a href="professores.html"><i class="fas fa-chalkboard-teacher"></i> <span>Professores</span></a>
+            </li>
+            <li>
+                <a href="alunos.html"><i class="fas fa-users"></i> <span>Alunos</span></a>
+            </li>
+            <li>
+                <a href="jornal.html"><i class="fas fa-newspaper"></i> <span>Jornal</span></a>
+            </li>
+            <li>
+                <a href="historia.html"><i class="fas fa-landmark"></i> <span>História</span></a>
+            </li>
+            <li>
+                <a href="quiz.html"><i class="fas fa-question-circle"></i> <span>Quiz</span></a>
+            </li>
+            <li>
+                <a href="entrevistas.html"><i class="fas fa-microphone-alt"></i> <span>Entrevistas</span></a>
+            </li>
+            <li>
+                <a href="curiosidades.html"><i class="fas fa-bell"></i> <span>Curiosidades</span></a>
+            </li>
+        </ul>
+
+        <div class="sidebar-footer">
+            <div class="theme-switcher">
+                <button id="themeToggle" class="btn btn-sm btn-toggle">
+                    <i class="fas fa-moon"></i> Tema Escuro
+                </button>
+            </div>
+            
+            <div class="aluno-info">
+                <img src="img/aluno-destaque.jpg" alt="Aluno Nacht" class="aluno-foto">
+                <div class="aluno-detalhes">
+                    <strong>Nacht</strong>
+                    <small>Turma: 3003</small>
+                    <small>Número: 5</small>
+                    <small>Desenvolvedor</small>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Conteúdo Principal -->
+    <div id="content">
+        <!-- Top Bar Mobile -->
+        <nav class="navbar navbar-expand d-flex d-md-none">
+            <div class="container-fluid">
+                <button id="sidebarCollapseMobile" class="btn btn-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="navbar-brand mx-auto">
+                    <img src="img/logo-bangu.png" height="30" alt="Logo">
+                </div>
+                <button id="themeToggleMobile" class="btn btn-toggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+        </nav>
+
+        <!-- Conteúdo da Página de Professores -->
+        <div class="container-fluid px-3 px-md-4 py-4">
+            <div class="row mb-4">
+                <div class="col-12">
+                    <h1 class="mb-4"><i class="fas fa-chalkboard-teacher me-3"></i>Nossos Professores</h1>
+                    <p class="lead">Conheça o corpo docente da Turma 3003</p>
+                </div>
+            </div>
+
+            <!-- Professores da Turma 3003 -->
+            <div class="row g-4 professores-container">
+                <!-- Português -->
+                <div class="col-md-6 col-lg-4 professor-card" data-category="linguagens">
+                    <div class="card h-100">
+                        <div class="card-img-top professor-img" style="background-image: url('img/professores/livia.jpg');"></div>
+                        <div class="card-body">
+                            <h5 class="card-title">Lívia</h5>
+                            <p class="card-subtitle">Português</p>
+                            <p class="card-text">Professora dedicada ao ensino da língua portuguesa e literatura, com foco em interpretação textual e produção de textos.</p>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Ed. Física -->
+                <div class="col-md-6 col-lg-4 professor-card" data-category="outros">
+                    <div class="card h-100">
+                        <div class="card-img-top professor-img" style="background-image: url('img/professores/aline.jpg');"></div>
+                        <div class="card-body">
+                            <h5 class="card-title">Aline</h5>
+                            <p class="card-subtitle">Educação Física</p>
+                            <p class="card-text">Promove a saúde e bem-estar através de atividades físicas, incentivando a prática esportiva e hábitos saudáveis.</p>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Filosofia -->
+                <div class="col-md-6 col-lg-4 professor-card" data-category="humanas">
+                    <div class="card h-100">
+                        <div class="card-img-top professor-img" style="background-image: url('img/professores/rodrigo-filo.jpg');"></div>
+                        <div class="card-body">
+                            <h5 class="card-title">Rodrigo</h5>
+                            <p class="card-subtitle">Filosofia</p>
+                            <p class="card-text">Estimula o pensamento crítico e reflexivo, abordando grandes pensadores e questões fundamentais da existência humana.</p>
+                    
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sociologia -->
+                <div class="col-md-6 col-lg-4 professor-card" data-category="humanas">
+                    <div class="card h-100">
+                        <div class="card-img-top professor-img" style="background-image: url('img/professores/andre.jpg');"></div>
+                        <div class="card-body">
+                            <h5 class="card-title">André</h5>
+                            <p class="card-subtitle">Sociologia</p>
+                            <p class="card-text">Analisa as estruturas sociais e relações humanas, promovendo debates sobre desigualdade, cultura e política.</p>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Inglês -->
+                <div class="col-md-6 col-lg-4 professor-card" data-category="linguagens">
+                    <div class="card h-100">
+                        <div class="card-img-top professor-img" style="background-image: url('img/professores/bianca.jpg');"></div>
+                        <div class="card-body">
+                            <h5 class="card-title">Bianca</h5>
+                            <p class="card-subtitle">Inglês</p>
+                            <p class="card-text">Ensina o idioma inglês com abordagem comunicativa, preparando os alunos para situações reais de uso da língua.</p>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Biologia -->
+                <div class="col-md-6 col-lg-4 professor-card" data-category="exatas">
+                    <div class="card h-100">
+                        <div class="card-img-top professor-img" style="background-image: url('img/professores/rodrigo-bio.jpg');"></div>
+                        <div class="card-body">
+                            <h5 class="card-title">Rodrigo</h5>
+                            <p class="card-subtitle">Biologia</p>
+                            <p class="card-text">Explora a vida em seus diversos níveis de organização, desde moléculas até ecossistemas, com aulas práticas e teóricas.</p>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Física -->
+                <div class="col-md-6 col-lg-4 professor-card" data-category="exatas">
+                    <div class="card h-100">
+                        <div class="card-img-top professor-img" style="background-image: url('img/professores/ramses.jpg');"></div>
+                        <div class="card-body">
+                            <h5 class="card-title">Ramsés</h5>
+                            <p class="card-subtitle">Física</p>
+                            <p class="card-text">Torna conceitos complexos acessíveis através de demonstrações práticas e aplicações no cotidiano.</p>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Linguagens na Tecnologia -->
+                <div class="col-md-6 col-lg-4 professor-card" data-category="linguagens">
+                    <div class="card h-100">
+                        <div class="card-img-top professor-img" style="background-image: url('img/professores/claudia.jpg');"></div>
+                        <div class="card-body">
+                            <h5 class="card-title">Cláudia</h5>
+                            <p class="card-subtitle">Linguagens na Tecnologia</p>
+                            <p class="card-text">Integra tecnologia e comunicação, ensinando sobre linguagens digitais, programação básica e mídias sociais.</p>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Química -->
+                <div class="col-md-6 col-lg-4 professor-card" data-category="exatas">
+                    <div class="card h-100">
+                        <div class="card-img-top professor-img" style="background-image: url('img/professores/bastos.jpg');"></div>
+                        <div class="card-body">
+                            <h5 class="card-title">Bastos</h5>
+                            <p class="card-subtitle">Química</p>
+                            <p class="card-text">Torna a química tangível através de experimentos e conexões com o cotidiano, despertando o interesse científico.</p>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Matemática -->
+                <div class="col-md-6 col-lg-4 professor-card" data-category="exatas">
+                    <div class="card h-100">
+                        <div class="card-img-top professor-img" style="background-image: url('img/professores/irineu.jpg');"></div>
+                        <div class="card-body">
+                            <h5 class="card-title">Irineu</h5>
+                            <p class="card-subtitle">Matemática</p>
+                            <p class="card-text">Aborda a matemática de forma lúdica e prática, desenvolvendo o raciocínio lógico e habilidades de resolução de problemas.</p>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Geografia -->
+                <div class="col-md-6 col-lg-4 professor-card" data-category="humanas">
+                    <div class="card h-100">
+                        <div class="card-img-top professor-img" style="background-image: url('img/professores/filipe.jpg');"></div>
+                        <div class="card-body">
+                            <h5 class="card-title">Filipe</h5>
+                            <p class="card-subtitle">Geografia</p>
+                            <p class="card-text">Explora as relações entre sociedade e espaço, abordando desde questões locais até fenômenos globais.</p>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- História -->
+                <div class="col-md-6 col-lg-4 professor-card" data-category="humanas">
+                    <div class="card h-100">
+                        <div class="card-img-top professor-img" style="background-image: url('img/professores/daniel.jpg');"></div>
+                        <div class="card-body">
+                            <h5 class="card-title">Daniel</h5>
+                            <p class="card-subtitle">História</p>
+                            <p class="card-text">Conecta passado e presente, analisando processos históricos e suas implicações na sociedade atual.</p>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        <!-- Rodapé -->
+        <footer class="bg-primary text-white py-4 mt-4">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <h5>Redes Sociais</h5>
+                        <div class="social-icons">
+                            <a href="https://www.instagram.com/cebangu_3003_?igsh=MW0yamx4NG9sZ2VzMA==" class="text-white me-3"><i class="fab fa-instagram fa-2x"></i></a>
+                            <a href="https://vm.tiktok.com/ZMSuWEkAu/" class="text-white me-3"><i class="fab fa-tiktok fa-2x"></i></a>
+                        </div>
+                    </div>
+                <hr>
+                <div class="text-center">
+                    <p class="mb-0">Nacht © 2025 - Todos os Direitos Reservados</p>
+                    <p class="mb-0">Turma: 3003 | Número: 5</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/professores.js"></script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo da Velha - C.E. BANGU</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/jogo.css">
+  <!--  <link rel="stylesheet" href="css/index.css"> -->
+    <link rel="icon" href="img/logo-bangu.png">
+</head>
+<body>
+    <div class="container">
+        <h1><i class="fas fa-times-circle"></i> Jogo da Velha <i class="far fa-circle"></i></h1>
+        
+        <div class="game-container">
+            <div class="cell" data-index="0"></div>
+            <div class="cell" data-index="1"></div>
+            <div class="cell" data-index="2"></div>
+            <div class="cell" data-index="3"></div>
+            <div class="cell" data-index="4"></div>
+            <div class="cell" data-index="5"></div>
+            <div class="cell" data-index="6"></div>
+            <div class="cell" data-index="7"></div>
+            <div class="cell" data-index="8"></div>
+        </div>
+
+        <div class="status">Sua vez (X)</div>
+        <button id="reset">Reiniciar Jogo</button>
+
+<div class="dificuldade-container">
+    <h3>Escolha a Dificuldade:</h3>
+    <select id="dificuldade">
+        <option value="facil">Fácil (Aleatório)</option>
+        <option value="medio" selected>Médio (Defensivo)</option>
+        <option value="dificil">Difícil (Ofensivo)</option>
+        <option value="hardcore">Hardcore (Perfeito)</option>
+        <option value="impossivel">Impossível (Trapaça)</option>
+    </select>
+</div>
+
+        <!-- Modal do Desenvolvedor (aparece ao vencer) -->
+        <div id="devModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>🏆 Parabéns! Você venceu! 🏆</h2>
+                <div class="dev-info">
+                    <img src="img/aluno-destaque.jpg" alt="Desenvolvedor Nacht">
+                    <div class="dev-details">
+<h3>Desenvolvedor do Site</h3>
+
+<p><i class="fas fa-user"></i> <strong>Nome:</strong> Gabriel</p>
+<p><i class="fas fa-id-badge"></i> <strong>Número:</strong> 5</p>
+<p><i class="fas fa-users"></i> <strong>Turma:</strong> 3003</p>
+<p><i class="fas fa-heart"></i> <strong>Status:</strong> Namorando</p>
+<p><i class="fas fa-code"></i> <strong>Função:</strong> Desenvolvedor</p>
+<p><i class="fas fa-graduation-cap"></i> <strong>Habilidades:</strong> HTML e CSS</p>
+<p><i class="fa fa-ban"></i> <strong>Sobre:</strong> Criador deste site</p>
+<p><i class="fa fa-superpowers"></i> <strong>Contato:</strong> 55 21 98263-1914</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/jogo.js"></script>
+</body>
+</html>
