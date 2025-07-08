@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+<title>Cyber Runner Mobile</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap');
+  html, body {
+    margin:0; padding:0; height:100%; width:100%; overflow: hidden;
+    background: linear-gradient(135deg, #020024, #090979, #00d4ff);
+    font-family: 'Orbitron', monospace, sans-serif;
+    color: #0ff;
+    user-select: none;
+  }
+  #gameCanvas {
+    display: block;
+    margin: 0 auto;
+    background: #111;
+    border: 3px solid #0ff;
+    border-radius: 10px;
+    box-shadow: 0 0 15px #0ff;
+    touch-action: none;
+  }
+  #ui {
+    position: fixed;
+    top: 8px; left: 50%;
+    transform: translateX(-50%);
+    font-size: 24px;
+    text-shadow: 0 0 5px #0ff;
+    z-index: 10;
+    user-select:none;
+  }
+  #startScreen, #gameOverScreen {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.95);
+    color: #0ff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    z-index: 20;
+    user-select:none;
+    padding: 0 20px;
+  }
+  #startScreen h1, #gameOverScreen h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    text-align: center;
+    text-shadow: 0 0 10px #0ff;
+  }
+  #startScreen button, #gameOverScreen button {
+    background: #0ff;
+    border: none;
+    border-radius: 15px;
+    padding: 18px 60px;
+    font-size: 24px;
+    font-weight: 900;
+    color: #111;
+    cursor: pointer;
+    box-shadow: 0 0 20px #0ff;
+    transition: background 0.3s;
+    user-select:none;
+  }
+  #startScreen button:hover, #gameOverScreen button:hover {
+    background: #33ffff;
+  }
+  #controls {
+    position: fixed;
+    bottom: 20px;
+    width: 100%;
+    max-width: 500px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: space-around;
+    user-select:none;
+    z-index: 15;
+  }
+  .control-btn {
+    background: rgba(0,255,255,0.25);
+    border: 2px solid #0ff;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    font-size: 32px;
+    color: #0ff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    user-select:none;
+    box-shadow: 0 0 15px #0ff;
+    touch-action: manipulation;
+  }
+  .control-btn:active {
+    background: #0ff;
+    color: #111;
+  }
+  /* Texto para dicas */
+  #tip {
+    position: fixed;
+    bottom: 110px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 18px;
+    color: #0ff;
+    text-shadow: 0 0 6px #0ff;
+    user-select:none;
+  }
+</style>
+</head>
+<body>
+
+<div id="startScreen">
+  <h1>Cyber Runner</h1>
+  <p>Controle o corredor cyberpunk, desvie dos obstáculos e colete itens! Use os botões na tela.</p>
+  <button id="startBtn">Começar</button>
+</div>
+
+<canvas id="gameCanvas" width="360" height="640"></canvas>
+
+<div id="ui">Pontos: 0 | Fase: 1</div>
+
+<div id="gameOverScreen" style="display:none;">
+  <h1>Fim de Jogo</h1>
+  <p id="finalScore"></p>
+  <button id="restartBtn">Jogar Novamente</button>
+</div>
+
+<div id="controls" style="display:none;">
+  <button class="control-btn" id="btnLeft">◀️</button>
+  <button class="control-btn" id="btnJump">⬆️</button>
+  <button class="control-btn" id="btnRight">▶️</button>
+</div>
+
+<div id="tip">Use os botões para mover e pular!</div>
+
+<script>
+// Setup canvas e contexto
+const canvas = document.getElementById('gameCanvas');
+const ctx = canvas.getContext('2d');
+
+let width = canvas.width;
+let height = canvas.height;
+
+// Game variables
+let gameRunning = false;
+let player, obstacles, items;
+let keys = { left:false, right:false, jump:false };
+let score = 0;
+let phase = 1;
+let gravity = 0.8;
+let floorY = height - 80;
+let jumpPower = 15;
+let gameSpeed = 4;
+
+// Player objeto
+class Player {
+  constructor(){
+    this.width = 50;
+    this.height = 70;
+    this.x = width / 2 - this.width/2;
+    this.y = floorY - this.height;
+    this.vx = 0;
+    this.vy = 0;
+    this.jumping = false;
+    this.color = '#0ff';
+  }
+  update(){
+    // Horizontal movimento
+    if(keys.left) this.vx = -6;
+    else if(keys.right) this.vx = 6;
+    else this.vx = 0;
+
+    this.x += this.vx;
+
+    // Limite da tela
+    if(this.x < 0) this.x = 0;
+    if(this.x + this.width > width) this.x = width - this.width;
+
+    // Gravidade e pulo
+    this.vy += gravity;
+    this.y += this.vy;
+
+    if(this.y + this.height >= floorY){
+      this.y = floorY - this.height;
+      this.vy = 0;
+      this.jumping = false;
+    }
+  }
+  jump(){
+    if(!this.jumping){
+      this.vy = -jumpPower;
+      this.jumping = true;
+      playSound(sounds.jump);
+    }
+  }
+  draw(){
+    // corpo do jogador - um retângulo cyberpunk com glow
+    ctx.fillStyle = this.color;
+    ctx.shadowColor = '#0ff';
+    ctx.shadowBlur = 15;
+    ctx.fillRect(this.x, this.y, this.width, this.height);
+
+    // olho (detalhe)
+    ctx.fillStyle = '#33ffff';
+    ctx.shadowBlur = 5;
+    ctx.fillRect(this.x + this.width/4, this.y + 20, this.width/5, 10);
+  }
+}
+
+// Obstáculos
+class Obstacle {
+  constructor(){
+    this.width = 40 + Math.random()*30;
+    this.height = 30 + Math.random()*40;
+    this.x = width + 50;
+    this.y = floorY - this.height;
+    this.color = '#f00';
+    this.speed = gameSpeed;
+  }
+  update(){
+    this.x -= this.speed;
+  }
+  draw(){
+    ctx.fillStyle = this.color;
+    ctx.shadowColor = '#f00';
+    ctx.shadowBlur = 10;
+    ctx.fillRect(this.x, this.y, this.width, this.height);
+  }
+}
+
+// Itens para coletar
+class Item {
+  constructor(){
+    this.size = 25;
+    this.x = width + 50;
+    this.y = floorY - 100 - Math.random()*120;
+    this.color = '#0f0';
+    this.speed = gameSpeed;
+    this.collected = false;
+  }
+  update(){
+    this.x -= this.speed;
+  }
+  draw(){
+    if(this.collected) return;
+    ctx.fillStyle = this.color;
+    ctx.shadowColor = '#0f0';
+    ctx.shadowBlur = 15;
+    ctx.beginPath();
+    ctx.arc(this.x, this.y, this.size/2, 0, Math.PI*2);
+    ctx.fill();
+
+    // brilho pulsante
+    let glow = 5 + Math.sin(Date.now()/200) * 5;
+    ctx.shadowBlur = glow;
+  }
+}
+
+// Sons simples via Web Audio API
+const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+
+function playSound(freq=440, duration=150){
+  if(!gameRunning) return;
+  const oscillator = audioCtx.createOscillator();
+  const gainNode = audioCtx.createGain();
+
+  oscillator.connect(gainNode);
+  gainNode.connect(audioCtx.destination);
+
+  oscillator.type = 'square';
+  oscillator.frequency.setValueAtTime(freq, audioCtx.currentTime);
+  gainNode.gain.setValueAtTime(0.1, audioCtx.currentTime);
+
+  oscillator.start();
+
+  setTimeout(() => {
+    oscillator.stop();
+  }, duration);
+}
+
+const sounds = {
+  jump: 440,
+  hit: 220,
+  collect: 880
+};
+
+// Checa colisão entre dois retângulos
+function isColliding(a, b){
+  return !(
+    a.x + a.width < b.x ||
+    a.x > b.x + b.width ||
+    a.y + a.height < b.y ||
+    a.y > b.y + b.height
+  );
+}
+
+// Checa colisão entre player e item (círculo)
+function isCollidingCircleRect(circle, rect){
+  let distX = Math.abs(circle.x - rect.x - rect.width/2);
+  let distY = Math.abs(circle.y - rect.y - rect.height/2);
+
+  if(distX > (rect.width/2 + circle.size/2)) return false;
+  if(distY > (rect.height/2 + circle.size/2)) return false;
+
+  if(distX <= (rect.width/2)) return true;
+  if(distY <= (rect.height/2)) return true;
+
+  let dx = distX - rect.width/2;
+  let dy = distY - rect.height/2;
+  return (dx*dx + dy*dy <= (circle.size/2)*(circle.size/2));
+}
+
+// Variáveis de jogo
+let obstacleSpawnTimer = 0;
+let itemSpawnTimer = 0;
+let obstacleSpawnInterval = 90;
+let itemSpawnInterval = 200;
+
+function resetGame(){
+  player = new Player();
+  obstacles = [];
+  items = [];
+  score = 0;
+  phase = 1;
+  obstacleSpawnTimer = 0;
+  itemSpawnTimer = 0;
+  gameSpeed = 4;
+  updateUI();
+}
+
+function updateUI(){
+  document.getElementById('ui').textContent = `Pontos: ${score} | Fase: ${phase}`;
+}
+
+function gameOver(){
+  gameRunning = false;
+  playSound(sounds.hit, 400);
+  document.getElementById('gameOverScreen').style.display = 'flex';
+  document.getElementById('finalScore').textContent = `Sua pontuação: ${score}`;
+  document.getElementById('controls').style.display = 'none';
+}
+
+// Loop principal
+function gameLoop(){
+  if(!gameRunning) return;
+  ctx.clearRect(0,0,width,height);
+
+  // Fundo piso neon
+  ctx.fillStyle = '#022';
+  ctx.fillRect(0, floorY, width, height - floorY);
+
+  // Atualiza e desenha player
+  player.update();
+  player.draw();
+
+  // Spawn obstáculos
+  obstacleSpawnTimer++;
+  if(obstacleSpawnTimer > obstacleSpawnInterval){
+    obstacles.push(new Obstacle());
+    obstacleSpawnTimer = 0;
+  }
+
+  // Spawn itens
+  itemSpawnTimer++;
+  if(itemSpawnTimer > itemSpawnInterval){
+    items.push(new Item());
+    itemSpawnTimer = 0;
+  }
+
+  // Atualiza e desenha obstáculos
+  for(let i=obstacles.length-1; i>=0; i--){
+    obstacles[i].update();
+    obstacles[i].draw();
+
+    // Colisão player x obstáculo
+    if(isColliding(player, obstacles[i])){
+      gameOver();
+      return;
+    }
+
+    // Remove fora da tela
+    if(obstacles[i].x + obstacles[i].width < 0){
+      obstacles.splice(i,1);
+      score++;
+      updateUI();
+
+      // Aumenta dificuldade a cada 10 pontos
+      if(score % 10 === 0){
+        phase++;
+        gameSpeed += 0.5;
+        obstacleSpawnInterval = Math.max(40, obstacleSpawnInterval - 5);
+        itemSpawnInterval = Math.max(80, itemSpawnInterval - 10);
+      }
+    }
+  }
+
+  // Atualiza e desenha itens
+  for(let i=items.length-1; i>=0; i--){
+    items[i].update();
+    items[i].draw();
+
+    // Colisão player x item
+    if(!items[i].collected && isCollidingCircleRect(items[i], player)){
+      items[i].collected = true;
+      score += 5;
+      playSound(sounds.collect, 200);
+      updateUI();
+      items.splice(i,1);
+    }
+
+    // Remove fora da tela
+    else if(items[i].x + items[i].size < 0){
+      items.splice(i,1);
+    }
+  }
+
+  requestAnimationFrame(gameLoop);
+}
+
+// Controles touch para celular
+const btnLeft = document.getElementById('btnLeft');
+const btnRight = document.getElementById('btnRight');
+const btnJump = document.getElementById('btnJump');
+
+btnLeft.addEventListener('touchstart', e=>{
+  e.preventDefault();
+  keys.left = true;
+});
+btnLeft.addEventListener('touchend', e=>{
+  e.preventDefault();
+  keys.left = false;
+});
+btnRight.addEventListener('touchstart', e=>{
+  e.preventDefault();
+  keys.right = true;
+});
+btnRight.addEventListener('touchend', e=>{
+  e.preventDefault();
+  keys.right = false;
+});
+btnJump.addEventListener('touchstart', e=>{
+  e.preventDefault();
+  if(!player.jumping) player.jump();
+});
+btnJump.addEventListener('touchend', e=>{
+  e.preventDefault();
+});
+
+// Tela inicial e final
+const startScreen = document.getElementById('startScreen');
+const startBtn = document.getElementById('startBtn');
+const gameOverScreen = document.getElementById('gameOverScreen');
+const restartBtn = document.getElementById('restartBtn');
+const controls = document.getElementById('controls');
+
+startBtn.addEventListener('click', () => {
+  startScreen.style.display = 'none';
+  controls.style.display = 'flex';
+  resetGame();
+  gameRunning = true;
+  playSound(660,150);
+  gameLoop();
+});
+
+restartBtn.addEventListener('click', () => {
+  gameOverScreen.style.display = 'none';
+  controls.style.display = 'flex';
+  resetGame();
+  gameRunning = true;
+  playSound(660,150);
+  gameLoop();
+});
+
+// Ajusta canvas para a largura da tela
+function resizeCanvas(){
+  let w = window.innerWidth;
+  let h = window.innerHeight;
+
+  // Mantém proporção vertical 9:16 (360x640)
+  let desiredHeight = h - 120;
+  let desiredWidth = desiredHeight * 9/16;
+
+  if(desiredWidth > w){
+    desiredWidth = w - 20;
+    desiredHeight = desiredWidth * 16/9;
+  }
+
+  canvas.width = desiredWidth;
+  canvas.height = desiredHeight;
+
+  width = canvas.width;
+  height = canvas.height;
+  floorY = height - 80;
+}
+
+window.addEventListener('resize', resizeCanvas);
+resizeCanvas();
+
+</script>
+</body>
+</html>
